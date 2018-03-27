@@ -38,12 +38,12 @@
 
 <body>
     <!-- Header -->
-    <nav class="navbar sticky-top navbar-expand-sm navbar_coca_cola">
+    <nav class="navbar sticky-top navbar-expand-sm navbar_space_museum">
         <!-- Coca Cola brand -->
         <div class="logo">
-            <a class="navbar-brand" href="#">
-                <h1>Coca</h1><h2>Cola</h2><h3>Journey</h3>
-                <p>Refreshing the world, one story at a time</p>
+            <a class="navbar-brand" href="javascript:swapTo('home')">
+                <h1>SpaceMuseum</h1>
+                <p>Exploring space, interactively</p>
             </a>
         </div>
 
@@ -60,14 +60,9 @@
                     <a class="nav-link active" href="javascript:swapTo('home')">Home</a>
                 </li>
 
-                <!-- About -->
-                <li class="nav-item">
-                    <a class="nav-link" href="#" data-toggle="popover" data-trigger="hover" data-placement="bottom" title="About Web 3D Applications" data-content="3D Apps is a final year and postgraduate module ...">About</a>
-                </li>
-
                 <!-- Drinks -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Drinks</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Models</a>
 
                     <!-- Drinks dropdown list -->
                     <div class="dropdown-menu">
@@ -77,9 +72,14 @@
                     </div>
                 </li>
 
-                <!-- Contact -->
+                <!-- Blog -->
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="#">Blog</a>
+                </li>
+
+                <!-- Contact Us -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
                 </li>
             </ul>
         </div>
@@ -96,7 +96,7 @@
         </div>
 
         <!-- Coke content -->
-        <div class="main_contents" id="coke" style="display: none;">
+        <div class="main_contents" id="coke" style="display: block;">
             <div class="row">
 
                 <!-- Viewer Window Column -->
@@ -120,15 +120,19 @@
                                 </x3d>
                             </div>
 
-                            <p>Use the following buttons to select different cameras</p>
-
                             <div class="camera-btns">
                                 <div class="btn-group ">
-                                    <a href="#" class="btn btn-primary btn-responsive camera-font">Front</a>
-                                    <a href="#" class="btn btn-secondary btn-responsive camera-font">Back</a>
-                                    <a href="#" class="btn btn-secondary btn-responsive camera-font">Left</a>
-                                    <a href="#" class="btn btn-secondary btn-responsive camera-font">Right</a>
-                                    <a href="#" class="btn btn-secondary btn-responsive camera-font">Top</a>
+                                    <a href="#" class="btn btn-secondary active btn-responsive camera-font" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Switch to the front camera">Front</a>
+
+                                    <a href="#" class="btn btn-secondary btn-responsive camera-font" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Switch to the back camera">Back</a>
+
+                                    <a href="#" class="btn btn-secondary btn-responsive camera-font" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Switch to the left camera">Left</a>
+
+                                    <a href="#" class="btn btn-secondary btn-responsive camera-font" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Switch to the right camera">Right</a>
+
+                                    <a href="#" class="btn btn-secondary btn-responsive camera-font" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Switch to the top camera">Top</a>
+
+                                    <a href="#" class="btn btn-primary btn-responsive camera-font" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Toggle spinning the 3D model">Spin</a>
                                 </div>
                             </div>
                         </div>
@@ -137,6 +141,15 @@
 
                 <!-- Media Gallery & Description Column -->
                 <div class="col-sm-5">
+
+                    <!-- Description -->
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title">Coca Cola</h3>
+                            <p class="card-text">It was 1886, John Pemberton, an Atlanta pharmacist, was inspired by simple curiosity. One afternoon, he stirred up a fragrant, caramel-coloured liquid and, when it was done, the mixture was combined with carbonated water and sampled by customers who all agreed - this new drink was something special!</p>
+                            <a href="http://www.coca-cola.co.uk/drinks/coca-cola/coca-cola" class="btn btn-info">More Info</a>
+                        </div>
+                    </div>
 
                     <!-- Media Gallery -->
                     <div class="card text-left">
@@ -151,14 +164,6 @@
                         </div>
                     </div>
 
-                    <!-- Description -->
-                    <div class="card">
-                        <div class="card-body">
-                            <h3 class="card-title">Coca Cola</h3>
-                            <p class="card-text">It was 1886, John Pemberton, an Atlanta pharmacist, was inspired by simple curiosity. One afternoon, he stirred up a fragrant, caramel-coloured liquid and, when it was done, the mixture was combined with carbonated water and sampled by customers who all agreed - this new drink was something special!</p>
-                            <a href="http://www.coca-cola.co.uk/drinks/coca-cola/coca-cola" class="btn btn-info">More Info</a>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -314,10 +319,10 @@
 
             <!-- Social media buttons -->
             <div class="navbar-text float-right social">
-                <a href="#"><i class="fab fa-facebook-square fa-2x"></i></a>
-                <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
-                <a href="#"><i class="fab fa-google-plus fa-2x"></i></a>
-                <a href="#"><i class="fab fa-github-square fa-2x"></i></a>
+                <a href="https://github.com/LoicVerrall"><i class="fab fa-github-square fa-2x"></i></a>
+                <a href="https://stackoverflow.com/users/3100991/loic-verrall"><i class="fab fa-stack-overflow fa-2x"></i></a>
+                <a href="https://twitter.com/Loicverrall"><i class="fab fa-twitter fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/loicverrall/"><i class="fab fa-linkedin fa-2x"></i></a>
             </div>
         </div>
     </nav>

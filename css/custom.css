@@ -1,11 +1,28 @@
 
+/* Define the space-themed font to be used throughout */
+
 @font-face {
-	font-family: cocaColaFont;
-	src: url(../assets/fonts/lokicola.ttf);
+	font-family: spaceFont;
+	src: url(../assets/fonts/Ubuntu.ttf);
+	weight: normal;
+}
+
+@font-face {
+	font-family: spaceFont;
+	src: url(../assets/fonts/Ubuntu-Bold.ttf);
+	weight: bold;
+}
+
+@font-face {
+	font-family: spaceFont;
+	src: url(../assets/fonts/Ubuntu-Light.ttf);
+	weight: light;
 }
 
 body {
-    background-color: rgb(108, 35, 22);
+    background-color: rgb(40, 44, 60);
+	font-family: spaceFont, 'Open Sans', sans-serif;
+	color: rgb(50, 50, 50);
 }
 
 .main_contents {
@@ -13,12 +30,8 @@ body {
     margin-bottom: 10px;
 }
 
-p {
-	font-family: -apple-system, 'Open Sans', sans-serif;
-}
-
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Oswald', sans-serif;
+	font-weight: bold;
 }
 
 #main_3d_image {
@@ -60,7 +73,7 @@ h1, h2, h3, h4, h5, h6 {
     border: 0px solid rgba(0,0,0,.125);
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: rgb(220, 210, 210);
+    background-color: rgb(210, 210, 220);
 }
 
 .logo {
@@ -68,107 +81,75 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo h1 {
-    font-family: cocaColaFont;
     font-size: 29px;
-    margin: 0;
-    margin-top: -10px;
-    margin-bottom: -15px;
-    float: left;
-    padding-top: 0px;
-    padding-left: 0px;
-    padding-right: 2px;
-}
-
-.logo h2 {
-    font-family: cocaColaFont;
-    font-size: 31px;
-    margin-top: -6px;
-    margin-bottom: -15px;
-    padding-top: 0px;
-    padding-left: 0px;
-    padding-right: 3px;
-    float: left;
-}
-
-.logo h3 {
-    font-size: 18px;
-    margin-top: 0px;
-    margin-bottom: -5px;
-    padding-top: 0px;
-    padding-left: 0px;
-    float: left;
 }
 
 .logo p {
-    font-size: 7px;
-    margin-top: 23px;
-    margin-bottom: 0px;
-    padding-top: 0px;
-    padding-left: 3px;
+    font-size: 14px;
 }
 
 /* Navigation Bar */
 
-.navbar_coca_cola {
-    background-color: rgb(90, 20, 10);
+.navbar_space_museum {
+	background-color: rgb(28, 32, 48);
     min-height: 70px;
 }
 
-.navbar_coca_cola .navbar-brand {
+.navbar_space_museum .navbar-brand {
     color: white;
  }
 
-.navbar_coca_cola .navbar-brand:hover {
-    color: rgb(230, 220, 220);
+.navbar_space_museum .navbar-brand:hover {
+    color: rgb(200, 200, 210);
 }
 
 /* Navigation Menu */
 
-.navbar_coca_cola .navbar-collapse {
+.navbar_space_museum .navbar-collapse {
 	margin-top: 20px;
 }
 
-.navbar_coca_cola .navbar-nav > li > a {
+.navbar_space_museum .navbar-nav > li > a {
     color: white;
 	padding-left: 10px;
 }
 
 /* CSS rule to overwrite the bootstrap.css text hover color on the navbar
 */
-.navbar_coca_cola .navbar-nav > li > a:hover,
-.navbar_coca_cola .navbar-nav > li > a:focus {
-    color: rgb(220, 210, 210);
+.navbar_space_museum .navbar-nav > li > a:hover,
+.navbar_space_museum .navbar-nav > li > a:focus {
+    color: rgb(200, 200, 210);
 }
 
 .navbar_coca_cola .navbar-nav .nav-item {
     margin-top: 00px;
 }
 
-.navbar_coca_cola .navbar-nav .nav-item > .active,
-.navbar_coca_cola .navbar-nav > .active > a:hover,
-.navbar_coca_cola .navbar-nav > .active > a:focus {
-    color: rgb(220, 210, 210); /* Font color for active font */
-    background-color: rgb(70, 12, 5); /* dark color for background */
+.navbar_space_museum .navbar-nav .nav-item > .active,
+.navbar_space_museum .navbar-nav > .active > a:hover,
+.navbar_space_museum .navbar-nav > .active > a:focus {
+    color: white; /* Font color for active font */
+    background-color: rgb(40, 44, 60); /* dark color for background */
 	border-radius: 5px; /* round the corners */
 }
 
 /* Burger Menu */
 
-.navbar_coca_cola .navbar-toggler {
+.navbar_space_museum .navbar-toggler {
     border-color: white;
 }
 
-.navbar_coca_cola  .navbar-toggler-icon {
+.navbar_space_museum  .navbar-toggler-icon {
 	/* Draws the three horizontal lines */
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1.0)' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
-.navbar_coca_cola .navbar-toggler:hover {
+.navbar_space_museum .navbar-toggler:hover {
 	/* Dim the burger menu border on hover */
     border-color: rgb(220, 210, 210);
 }
 
-.navbar_coca_cola .navbar-toggler {
+.navbar_space_museum .navbar-toggler {
     outline: none !important;
 }
 
@@ -176,19 +157,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .dropdown-menu {
     text-align: -webkit-left;
-    background-color: rgb(108, 35, 22);
+    background-color: rgb(210, 210, 220);
     margin-top: 15px;
 }
 
 .dropdown-menu
 .dropdown-item {
-    color: white;
+    color: black;
 }
 
 .dropdown-menu
 .dropdown-item:hover {
-    color: #030303;
-    background-color: rgb(220, 210, 210);
+    color: white;
+    background-color: rgb(28, 32, 48);
 }
 
 /* Drinks Gallery */
@@ -200,33 +181,33 @@ h1, h2, h3, h4, h5, h6 {
 .gallery .img-thumbnail {
     padding: 0.25rem;
     margin: 3px;
-    background-color: #BBB;
-    border: 1px solid #AAA;
+    background-color: rgb(195, 195,	208);
+    border: 1px solid rgba(200, 200, 200, 0.5);
     border-radius: 0.4rem;
     max-width: 31%;
     height: auto;
 }
 
 .gallery .img-thumbnail:hover {
-	background-color: #CCC;
+	background-color: rgb(185, 185,	200);
 }
 
 /* Footer */
 
 .footer {
     color: #FFF;
-    background-color: rgb(70, 12, 5);
+    background-color: rgb(28, 32, 48);
     height: 50px;
 }
 
 .navbar-text > a {
-    color: rgb(255, 255, 255);
+	color: white;
+	padding: 5px;
     font-size: 10px;
     text-decoration: none;
-}
+}rgb(200, 200, 210)
 
 .navbar-text > p {
-    color: rgb(220, 210, 210);
     font-size: 15px;
     text-decoration: none;
 }
@@ -238,6 +219,8 @@ h1, h2, h3, h4, h5, h6 {
 .social {
     padding-top: 0px;
 }
+
+
 
 /* Content */
 
@@ -260,10 +243,6 @@ h1, h2, h3, h4, h5, h6 {
 .camera-font {
     font-weight: 400;
     color: white;
-}
-
-.camera-font:hover {
-    color: rgb(3, 3, 3);
 }
 
 .btn-responsive {
