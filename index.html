@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Responsive Mobile Web 3D Apps — Lab 1</title>
+    <title>SpaceMuseum</title>
 
     <link rel='stylesheet' type='text/css' href='css/x3dom.css'>
 
@@ -17,29 +17,47 @@
             document.getElementById(id).style.display = shouldDisplay ? 'block' : 'none';
         }
 
-        function swapTo(contentToDisplay) {
-            // Hide all elements first.
-            displayElement('home', false);
-            displayElement('coke', false);
-            displayElement('sprite', false);
-            displayElement('pepper', false);
+        function makeElementActive(elementID, active) {
+          if (active) {
+            // Make sure the class doesn't already have the active tag.
+            if (document.getElementById(elementID).classList.contains('active') == false) {
+              document.getElementById(elementID).classList.add('active')
+            }
+          } else {
+            document.getElementById(elementID).classList.remove('active')
+          }
+        }
 
-            // Show only the specified element.
-            displayElement(contentToDisplay, true);
+        function swapTo(contentToDisplay) {
+          // Hide all elements first.
+          displayElement('home', false);
+          displayElement('spaceshuttle', false);
+          displayElement('satellite', false);
+          displayElement('asteroid', false);
+
+          // Deselect both menu items.
+          makeElementActive('homebutton', false)
+          makeElementActive('modelsbutton', false)
+
+          if (contentToDisplay === 'home') {
+            makeElementActive('homebutton', true)
+          } else if (contentToDisplay === 'spaceshuttle' || contentToDisplay === 'satellite' || contentToDisplay === 'asteroid') {
+            makeElementActive('modelsbutton', true)
+          }
+
+          // Show only the specified element.
+          displayElement(contentToDisplay, true);
         }
     </script>
 
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="./js/gallery_generator.js"></script>
 
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <script src="./js/gallery_generator.js"></script>
 </head>
 
 <body>
     <!-- Header -->
     <nav class="navbar sticky-top navbar-expand-sm navbar_space_museum">
-        <!-- Coca Cola brand -->
+        <!-- Brand -->
         <div class="logo">
             <a class="navbar-brand" href="javascript:swapTo('home')">
                 <h1>SpaceMuseum</h1>
@@ -57,18 +75,18 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Home (currently selected) -->
                 <li class="nav-item">
-                    <a class="nav-link active" href="javascript:swapTo('home')">Home</a>
+                    <a class="nav-link active" id="homebutton" href="javascript:swapTo('home')">Home</a>
                 </li>
 
-                <!-- Drinks -->
+                <!-- Models -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Models</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="modelsbutton" data-toggle="dropdown">Models</a>
 
-                    <!-- Drinks dropdown list -->
+                    <!-- Models dropdown list -->
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="javascript:swapTo('coke')">Coca Cola</a>
-                        <a class="dropdown-item" href="javascript:swapTo('sprite')">Sprite</a>
-                        <a class="dropdown-item" href="javascript:swapTo('pepper')">Dr Pepper</a>
+                        <a class="dropdown-item" href="javascript:swapTo('spaceshuttle')">Space Shuttle</a>
+                        <a class="dropdown-item" href="javascript:swapTo('satellite')">Satellite</a>
+                        <a class="dropdown-item" href="javascript:swapTo('asteroid')">Asteroid</a>
                     </div>
                 </li>
 
@@ -89,14 +107,14 @@
     <div class="container-fluid">
 
         <!-- Home page -->
-        <div class="main_contents" id="home">
+        <div class="main_contents" id="home" style="display:none;">
             <div class="row">
-                <p>Homepage
+                <p>TODO: Have an intro with a selection for the three models</p>
             </div>
         </div>
 
-        <!-- Coke content -->
-        <div class="main_contents" id="coke" style="display: block;">
+        <!-- Space Shuttle content -->
+        <div class="main_contents" id="spaceshuttle" style="display:block;">
             <div class="row">
 
                 <!-- Viewer Window Column -->
@@ -105,7 +123,7 @@
 
                         <!-- Card Header -->
                         <div class="card-header">
-                            <h4 class="card-title">Coca Cola X3D Model</h4>
+                            <div id="spaceshuttle_title"></div>
                         </div>
 
                         <!-- Card Body -->
@@ -144,10 +162,10 @@
 
                     <!-- Description -->
                     <div class="card">
+                        <div class="card-header gallery-header">Description</div>
                         <div class="card-body">
-                            <h3 class="card-title">Coca Cola</h3>
-                            <p class="card-text">It was 1886, John Pemberton, an Atlanta pharmacist, was inspired by simple curiosity. One afternoon, he stirred up a fragrant, caramel-coloured liquid and, when it was done, the mixture was combined with carbonated water and sampled by customers who all agreed - this new drink was something special!</p>
-                            <a href="http://www.coca-cola.co.uk/drinks/coca-cola/coca-cola" class="btn btn-info">More Info</a>
+                            <div id="spaceshuttle_description"></div>
+                            <div id="spaceshuttle_link"></div>
                         </div>
                     </div>
 
@@ -156,11 +174,9 @@
                         <div class="card-header gallery-header">Media Gallery</div>
                         <div class="card-body">
                             <h4 class="card-title">Images</h4>
-                            <p class="card-text">These 3D images of the Coke can, Sprite bottle and Dr Pepper cup are rendered in 3ds Max 2017 with Mental Rayasdf</p>
+                            <p class="card-text">Here, you can select between the X3D model, descriptive video, and a collection of images of the space shuttle.
 
                             <div class="gallery" id="gallery1"></div>
-
-                            <p class="card-text">These 3D images of the Coke can, Sprite bottle and Dr Pepper cup are rendered in 3ds Max 2017 with Mental Rayasdf</p>
                         </div>
                     </div>
 
@@ -170,7 +186,7 @@
         </div>
 
         <!-- Sprite content -->
-        <div class="main_contents" id="sprite" style="display: none;">
+        <div class="main_contents" id="satellite" style="display: none;">
             <div class="row">
 
                 <!-- Viewer Window Column -->
@@ -239,7 +255,7 @@
         </div>
 
         <!-- Pepper content -->
-        <div class="main_contents" id="pepper" style="display: none;">
+        <div class="main_contents" id="asteroid" style="display: none;">
             <div class="row">
 
                 <!-- Viewer Window Column -->
