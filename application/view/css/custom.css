@@ -3,26 +3,27 @@
 
 @font-face {
 	font-family: spaceFont;
-	src: url(../assets/fonts/Ubuntu.ttf);
+	src: url(../../../assets/fonts/Ubuntu.ttf);
 	weight: normal;
 }
 
 @font-face {
 	font-family: spaceFont;
-	src: url(../assets/fonts/Ubuntu-Bold.ttf);
+	src: url(../../../assets/fonts/Ubuntu-Bold.ttf);
 	weight: bold;
 }
 
 @font-face {
 	font-family: spaceFont;
-	src: url(../assets/fonts/Ubuntu-Light.ttf);
+	src: url(../../../assets/fonts/Ubuntu-Light.ttf);
 	weight: light;
 }
 
 body {
-    background-color: rgb(40, 44, 60);
+  background-color: rgb(40, 44, 60);
 	font-family: spaceFont, 'Open Sans', sans-serif;
 	color: rgb(50, 50, 50);
+
 }
 
 .main_contents {
@@ -76,8 +77,56 @@ h1, h2, h3, h4, h5, h6 {
     background-color: rgb(210, 210, 220);
 }
 
+.space_museum_logo {
+  border-radius: 50%;
+  background: #34588e;
+  height: 40px;
+  width: 40px;
+  content:""
+  border: 2px solid white;
+  overflow: hidden;
+  position: relative;
+}
+
+.space_museum_logo:after {
+  border-radius: 50%;
+  background: #34588e;
+  height: 45px;
+  width: 45px;
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  z-index: 2;
+}
+
+.space_museum_logo:before {
+  border-radius: 200%;
+  background: rgba(255,255,255,0.4);
+  height: 60px;
+  width: 60px;
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  transform: rotate(5deg);
+  z-index: 1;
+  animation: pulse 2s infinite alternate ease-in-out;
+}
+
+@keyframes pulse {
+  0%   {opacity: 0.1}
+  100% {opacity: 0.4}
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
 .logo {
-    margin-top: 3px;
+    margin-top: 9px;
+    margin-left: 15px;
 }
 
 .logo h1 {
