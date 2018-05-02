@@ -1,4 +1,4 @@
-<?php include 'header.php' ?>
+<?php echo $header; ?>
 
 <!-- Model Content -->
 <div class="main_contents">
@@ -76,4 +76,4 @@
 
 </div>
 
-<?php include 'footer.php' ?>
+<?php echo $footer; ?>

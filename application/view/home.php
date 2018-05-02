@@ -1,4 +1,4 @@
-<?php include 'header.php' ?>
+<?php echo $header; ?>
 
 <!-- Main content -->
 <div class="container-fluid">
@@ -11,7 +11,5 @@
   </div>
 
 </div>
-
-<?php include 'footer.php' ?>
 
 <?php echo $footer; ?>

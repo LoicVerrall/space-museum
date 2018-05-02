@@ -51,14 +51,29 @@ class Controller {
     if (isset($_GET['model_id']) == false) {
       // No model_id was specified, so navigate back to home.
       // TODO: Show error message.
-      $this->load->view('home');
+      $this->load->display('home');
     } else {
       // Otherwise, a model_id was specified, so extract it.
       $model_id = $_GET['model_id'];
       // TODO: Fetch this from the model.
       $data['model_id'] = $model_id;
-      $this->load->view('models', $data);
+      $data['header'] = $this->generateHeader(1);
+      $data['footer'] = $this->generateFooter();
+      $this->load->display('models', $data);
     }
+  }
+
+  function generateHeader($active_index) {
+    ob_start();
+    $data['active_index'] = $active_index;
+    $this->load->display('header', $data);
+    return ob_get_clean();
+  }
+
+  function generateFooter() {
+    ob_start();
+    $this->load->display('footer');
+    return ob_get_clean();
   }
 
 	// function apiCreateTable()

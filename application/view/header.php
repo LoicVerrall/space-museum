@@ -47,12 +47,12 @@
       <ul class="navbar-nav ml-auto">
         <!-- Home (selected by default) -->
         <li class="nav-item">
-          <a class="nav-link active" id="homebutton" href="index.php">Home</a>
+          <a class="nav-link <?php echo ($active_index == 0 ? 'active' : '') ?>" id="homebutton" href="index.php">Home</a>
         </li>
 
         <!-- Models -->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="modelsbutton" data-toggle="dropdown">Models</a>
+          <a class="nav-link dropdown-toggle <?php echo ($active_index == 1 ? 'active' : '') ?>" href="#" id="modelsbutton" data-toggle="dropdown">Models</a>
 
           <!-- Models dropdown list -->
           <div class="dropdown-menu">
@@ -64,12 +64,12 @@
 
         <!-- Blog -->
         <li class="nav-item">
-          <a class="nav-link" href="javascript:swapTo('blog_content')">Blog</a>
+          <a class="nav-link <?php echo ($active_index == 2 ? 'active' : '') ?>" href="index.php?page=blog">Blog</a>
         </li>
 
         <!-- Contact Us -->
         <li class="nav-item">
-          <a class="nav-link" href="index.php?page=models&model_id=0">Contact Us</a>
+          <a class="nav-link <?php echo ($active_index == 3 ? 'active' : '') ?>" href="index.php?page=contact_us">Contact Us</a>
         </li>
       </ul>
     </div>
