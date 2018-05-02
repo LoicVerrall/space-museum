@@ -10,7 +10,7 @@
 
         <!-- Card Header -->
         <div class="card-header">
-          <div id="model_content_title"></div>
+          <h4><?php echo $model['modelTitle']; ?></h4>
         </div>
 
         <!-- Card Body -->
@@ -20,6 +20,7 @@
           <div class="model3D">
             <x3d>
               <scene>
+                <!-- TODO: Load the actual model to display -->
                 <inline url="assets/x3d/coke.x3d"></inline>
               </scene>
             </x3d>
@@ -42,7 +43,7 @@
           </div>
         </div>
 
-        <div class="card-footer text-muted" id="viewer_footer">
+        <div class="card-footer text-muted">
           X3D model created using 3DSMax
         </div>
       </div>
@@ -55,8 +56,8 @@
       <div class="card">
         <div class="card-header gallery-header">Description</div>
         <div class="card-body">
-          <div id="spaceshuttle_description"></div>
-          <div id="spaceshuttle_link"></div>
+          <p><?php echo $model['modelDescription']; ?></p>
+          <a href="<?php echo $model['url']; ?>" class="btn btn-info">More Info</a>
         </div>
       </div>
 
