@@ -27,7 +27,13 @@ class Model {
       $this->db_handle->exec("DROP TABLE IF EXISTS ModelData");
 
       // Create the new ModelData table.
-			$this->db_handle->exec("CREATE TABLE ModelData (Id INTEGER PRIMARY KEY, modelTitle TEXT, modelDescription TEXT, url TEXT)");
+			$this->db_handle->exec("CREATE TABLE ModelData (
+        Id INTEGER PRIMARY KEY,
+        modelTitle TEXT,
+        modelDescription TEXT,
+        url TEXT,
+        x3dResourceName TEXT
+      )");
 
 			return "ModelData table successfully created in space_museum_data.db";
 		} catch (PD0EXception $e){
@@ -40,10 +46,17 @@ class Model {
 
   // This function is responsible for inserting the initial data into the database.
 	public function dbInsertInitialData() {
+    $this->dbCreateTable();
 		try {
 			$this->db_handle->exec(
-  			"INSERT INTO ModelData (Id, modelTitle, modelDescription, url)
-  				VALUES (1, 'Space Shuttle', 'The Space Shuttle was a partially reusable low Earth orbital spacecraft system operated by the U.S. National Aeronautics and Space Administration (NASA), as part of the Space Shuttle program. Its official program name was Space Transportation System (STS), taken from a 1969 plan for a system of reusable spacecraft of which it was the only item funded for development. The first of four orbital test flights occurred in 1981, leading to operational flights beginning in 1982.', 'https://www.nasa.gov/mission_pages/shuttle/main/index.html'); "
+  			"INSERT INTO ModelData (Id, modelTitle, modelDescription, url, x3dResourceName)
+  				VALUES (
+            0,
+            'Space Shuttle',
+            'The Space Shuttle was a partially reusable low Earth orbital spacecraft system operated by the U.S. National Aeronautics and Space Administration (NASA), as part of the Space Shuttle program. Its official program name was Space Transportation System (STS), taken from a 1969 plan for a system of reusable spacecraft of which it was the only item funded for development. The first of four orbital test flights occurred in 1981, leading to operational flights beginning in 1982.',
+            'https://www.nasa.gov/mission_pages/shuttle/main/index.html',
+            'coke.x3d'
+          ); "
       );
 
 			return "ModelData inserted into space_museum_data.db";
@@ -56,30 +69,17 @@ class Model {
 		$this->db_handle = NULL;
 	}
 
-  // This method is responsible for retrieving (in JSON) format, all of the model data stored in the database.
-	public function dbGetModelData() {
-		try {
-			// Prepare a statement to get all records from the ModelData table.
-			$sql = 'SELECT * FROM ModelData';
+  // This method is responsible for retrieving (in JSON) format, the model with the specified ID.
+  public function dbGetModelWithID($id) {
+    try {
+			// Prepare an SQL statement.
+			$sql = "SELECT * FROM ModelData WHERE id='$id'";
 
 			// Use PDO query() to query the database with the prepared SQL statement.
 			$stmt = $this->db_handle->query($sql);
 
-			// Set up an array to return the results to the controller.
-			$result = null;
-
-			// Set up a counter to index each row of the array.
-			$i = 0;
-
-			// Use PDO fetch() to retrieve the results from the database using a while loop to loop through the rows returned.
-			while ($data = $stmt->fetch()) {
-				// Write the database contents to the results array for sending back to the controller.
-				$result[$i]['modelTitle'] = $data['modelTitle'];
-				$result[$i]['modelDescription'] = $data['modelDescription'];
-				$result[$i]['url'] = $data['url'];
-
-				$i++;
-			}
+      // Fetch the result and store it in the model_data variable.
+      $model_data = $stmt->fetch();
 		} catch (PD0EXception $e) {
       echo 'The following error occured while retreiving data from the database:<br />';
 			print new Exception($e->getMessage());
@@ -89,8 +89,8 @@ class Model {
 		$this->db_handle = NULL;
 
 		// Send the response (JSON encoded) back to the controller.
-		return json_encode($result);
-	}
+		return $model_data;
+  }
 
   // This function returns the titles of the models (used to populate the dropdown list).
 	public function dbGetModelNames() {
