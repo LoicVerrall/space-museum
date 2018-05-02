@@ -58,6 +58,12 @@ class Controller {
       // Fetch the model's data from the app model.
       $data['model_data'] = $this->model->dbGetModelWithID($model_id);
 
+      // Make sure data was retrieved for this model_id, otherwise display error.
+      if (strlen($data['model_data']['modelTitle']) <= 0) {
+        $this->error('Model Not Found', 'A model with a model_id value of ' . $model_id . ' was not found in the database.');
+        return;
+      }
+
       $data['header'] = $this->generateHeader(1);
       $data['footer'] = $this->generateFooter();
 
