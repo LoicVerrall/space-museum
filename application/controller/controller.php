@@ -22,14 +22,27 @@ class Controller {
         $this->models();
         break;
       default:
-        // TODO: show a proper error message.
-        echo "<span style='color:red; font-weight:bold;'>ERROR: Controller doesn't know how to render page: '" . $page . "'.</span>";
+        // Show an error message to the user.
+        $this->error('Unknown Destination', 'Unable to navigate to page: ' . $page . '.');
     }
   }
 
   // Render the home screen.
 	function home() {
-		$this->load->view('home');
+    $data['header'] = $this->generateHeader(0);
+    $data['footer'] = $this->generateFooter();
+		$this->load->display('home', $data);
+	}
+
+  // Render the error screen.
+	function error($error_title, $error_description) {
+    $data['header'] = $this->generateHeader(-1);
+    $data['footer'] = $this->generateFooter();
+
+    $data['err_card_title'] = $error_title;
+    $data['err_card_description'] = $error_description;
+
+		$this->load->display('error', $data);
 	}
 
   // Render the models screen.
