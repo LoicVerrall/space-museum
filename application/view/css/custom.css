@@ -84,7 +84,9 @@ h1, h2, h3, h4, h5, h6 {
   width: 40px;
   content:""
   border: 2px solid white;
-  overflow: hidden;
+  overflow: hidden !important;
+  -webkit-transform: translateZ(0);
+  -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
   position: relative;
 }
 
@@ -98,6 +100,12 @@ h1, h2, h3, h4, h5, h6 {
   top: -10px;
   left: -20px;
   z-index: 2;
+  transform-origin: top left;
+  animation:spin 3s ease-in-out;
+}
+
+@keyframes spin {
+  100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); }
 }
 
 .space_museum_logo:before {
