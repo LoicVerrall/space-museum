@@ -93,7 +93,7 @@ class Model {
 	}
 
   // This function returns the titles of the models (used to populate the dropdown list).
-	public function dbGetModelTypes() {
+	public function dbGetModelNames() {
     // TODO: Move this info into a table of its own.
 		return array("Space Shuttle", "Dragon V2", "Asteroid");
 	}

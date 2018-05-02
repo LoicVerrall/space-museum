@@ -56,8 +56,8 @@
 
           <!-- Models dropdown list -->
           <div class="dropdown-menu">
-            <?php for ($i = 0; $i < count($data); $i++){ ?>
-              <a class="dropdown-item" href="index.php?page=models&model_id=<?php echo $i ?>"><?php echo $data[$i] ?></a>
+            <?php for ($i = 0; $i < count($model_names); $i++){ ?>
+              <a class="dropdown-item" href="index.php?page=models&model_id=<?php echo $i ?>"><?php echo $model_names[$i] ?></a>
             <?php } ?>
           </div>
         </li>

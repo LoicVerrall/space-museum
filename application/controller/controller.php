@@ -65,7 +65,12 @@ class Controller {
 
   function generateHeader($active_index) {
     ob_start();
+    // Used to highlight the selected page in the nav bar.
     $data['active_index'] = $active_index;
+
+    // Load the names of the models (for use in the dropdown menu).
+    $data['model_names'] = $this->model->dbGetModelNames();
+
     $this->load->display('header', $data);
     return ob_get_clean();
   }
@@ -76,37 +81,5 @@ class Controller {
     return ob_get_clean();
   }
 
-	// function apiCreateTable()
-	// {
-	// 	$data = $this->model->dbCreateTable();
-	// 	$this->load->view('viewMessage', $data);
-	// }
-	// function apiInsertData()
-	// {
-	// 	$data = $this->model->dbInsertData();
-	//    	$this->load->view('viewMessage', $data);
-	// }
-	// function apiGetData()
-	// {
-	// 	$data = $this->model->dbGetData();
-	// 	$this->load->view('view3DAppData', $data);
-	// }
-  // function apiGetFlickrFeed()
-  // {
-  //   $this->load->view('viewFlickrFeed');
-  // }
-  // function apiGetJson()
-  // {
-  //   $this->load->view('viewJson');
-  // }
-  // // API call to select 3D images
-	// function apiLoadImage()
-	// {
-	//    $data = $this->model->dbGetBrand();
-	//    // Note, the viewDrinks.php view being loaded here calls a new model
-	//    // called modelDrinkDetails.php, which is not part of the Model class
-	//    // It is a separate model illustrating that you can have many models
-	//    $this->load->view('viewDrinks', $data);
-	// }
 }
 ?>
