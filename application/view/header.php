@@ -11,7 +11,7 @@
   <link rel='stylesheet' href='http://www.x3dom.org/x3dom/release/x3dom.css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
-  <link rel="stylesheet" type='text/css' href="application/view/css/custom.css">
+  <link rel="stylesheet" type='text/css' href="assets/css/custom.css">
 
   <!-- JS script imports (run before page is rendered) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

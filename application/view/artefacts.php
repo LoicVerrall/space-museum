@@ -43,7 +43,7 @@
         </div>
 
         <div class="card-footer text-muted">
-          X3D model created using 3DSMax
+          X3D model created using Autodesk 3ds Max.
         </div>
       </div>
     </div>

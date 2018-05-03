@@ -7,7 +7,7 @@ class Model {
 	// Constructor for this class creates a database connection (using PHP PDO) to the local SQLite database.
 	public function __construct() {
 		// Set up the database source name (DSN).
-		$dsn = 'sqlite:./db/space_museum_data.db';
+		$dsn = 'sqlite:./assets/db/space_museum_data.db';
 
 		try {
 			$this->db_handle = new PDO($dsn, 'user', 'password', array(
@@ -59,7 +59,7 @@ class Model {
       $this->db_handle->exec(
   			"INSERT INTO ArtefactData (artefactId, artefactDescription, url, x3dResourceName)
   				VALUES
-          (0, 'Falcon Heavy is the most powerful operational rocket in the world by a factor of two. With the ability to lift into orbit nearly 64 metric tons (141,000 lb)---a mass greater than a 737 jetliner loaded with passengers, crew, luggage and fuel--Falcon Heavy can lift more than twice the payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost. Falcon Heavy draws upon the proven heritage and reliability of Falcon 9.', 'http://www.spacex.com/falcon-heavy', 'coke.x3d'),
+          (0, 'Falcon Heavy is the most powerful operational rocket in the world by a factor of two. With the ability to lift into orbit nearly 64 metric tons (141,000 lb)—a mass greater than a 737 jetliner loaded with passengers, crew, luggage and fuel—Falcon Heavy can lift more than twice the payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost. Falcon Heavy draws upon the proven heritage and reliability of Falcon 9.', 'http://www.spacex.com/falcon-heavy', 'coke.x3d'),
 
           (1, 'Dragon Description', 'http://www.spacex.com/dragon', 'sprite.x3d');
         "

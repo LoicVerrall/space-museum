@@ -17,7 +17,7 @@
   </nav>
 
   <!-- JS Scripts that require access to the DOM -->
-  <script src="application/view/js/custom.js"></script>
-  <!-- <script src="js/getJsonData.js"></script> -->
+  <script src="assets/js/custom.js"></script>
+
 </body>
 </html>
