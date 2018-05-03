@@ -47,17 +47,17 @@
       <ul class="navbar-nav ml-auto">
         <!-- Home (selected by default) -->
         <li class="nav-item">
-          <a class="nav-link <?php echo ($active_index == 0 ? 'active' : '') ?>" id="homebutton" href="index.php">Home</a>
+          <a class="nav-link <?php echo ($active_index == 0 ? 'active' : '') ?>" href="index.php">Home</a>
         </li>
 
         <!-- Models -->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle <?php echo ($active_index == 1 ? 'active' : '') ?>" href="#" id="modelsbutton" data-toggle="dropdown">Models</a>
+          <a class="nav-link dropdown-toggle <?php echo ($active_index == 1 ? 'active' : '') ?>" href="#" data-toggle="dropdown">Artefacts</a>
 
           <!-- Models dropdown list -->
           <div class="dropdown-menu">
-            <?php for ($i = 0; $i < count($model_names); $i++){ ?>
-              <a class="dropdown-item" href="index.php?page=models&model_id=<?php echo $i ?>"><?php echo $model_names[$i] ?></a>
+            <?php for ($i = 0; $i < count($artefact_names); $i++){ ?>
+              <a class="dropdown-item" href="index.php?page=artefacts&artefact_id=<?php echo $i ?>"><?php echo $artefact_names[$i] ?></a>
             <?php } ?>
           </div>
         </li>

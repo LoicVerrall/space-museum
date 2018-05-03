@@ -10,7 +10,7 @@
 
         <!-- Card Header -->
         <div class="card-header">
-          <h4><?php echo $model_data['modelTitle']; ?></h4>
+          <h4><?php echo $artefact_data['artefactName']; ?></h4>
         </div>
 
         <!-- Card Body -->
@@ -20,7 +20,7 @@
           <div class="model3D">
             <x3d>
               <scene>
-                <inline url="assets/x3d/<?php echo $model_data['x3dResourceName']; ?>"></inline>
+                <inline url="assets/x3d/<?php echo $artefact_data['x3dResourceName']; ?>"></inline>
               </scene>
             </x3d>
           </div>
@@ -55,8 +55,8 @@
       <div class="card">
         <div class="card-header gallery-header">Description</div>
         <div class="card-body">
-          <p><?php echo $model_data['modelDescription']; ?></p>
-          <a href="<?php echo $model_data['url']; ?>" class="btn btn-info" target='_blank'>More Info</a>
+          <p><?php echo $artefact_data['artefactDescription']; ?></p>
+          <a href="<?php echo $artefact_data['url']; ?>" class="btn btn-info" target='_blank'>More Info</a>
         </div>
       </div>
 

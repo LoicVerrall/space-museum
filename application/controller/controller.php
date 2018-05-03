@@ -18,8 +18,8 @@ class Controller {
       case "home":
         $this->home();
         break;
-      case "models":
-        $this->models();
+      case "artefacts":
+        $this->artefacts();
         break;
       default:
         // Show an error message to the user.
@@ -29,6 +29,7 @@ class Controller {
 
   // Render the home screen.
 	public function home() {
+    $this->model->dbInitialiseDatabases();
     $data['header'] = $this->generateHeader(0);
     $data['footer'] = $this->generateFooter();
 		$this->load->display('home', $data);
@@ -45,29 +46,29 @@ class Controller {
 		$this->load->display('error', $data);
 	}
 
-  // Render the models screen.
-  public function models() {
-    // Extract the requested model_id from the URL.
-    if (isset($_GET['model_id']) == false) {
-      // No model_id was specified, so display an error message.
-      $this->error('No Model Specified', 'When visiting the models page, a model_id (0, 1, 2, or 3) must be specified.');
+  // Render the artefacts screen.
+  public function artefacts() {
+    // Extract the requested artefact_id from the URL.
+    if (isset($_GET['artefact_id']) == false) {
+      // No artefact_id was specified, so display an error message.
+      $this->error('No Artefact Specified', 'When visiting the artefacts page, an artefact_id (0, 1, 2, or 3) must be specified.');
     } else {
-      // Otherwise, a model_id was specified, so extract it.
-      $model_id = $_GET['model_id'];
+      // Otherwise, a artefact_id was specified, so extract it.
+      $artefact_id = $_GET['artefact_id'];
 
-      // Fetch the model's data from the app model.
-      $data['model_data'] = $this->model->dbGetModelWithID($model_id);
+      // Fetch the artefact's data from the app model.
+      $data['artefact_data'] = $this->model->dbGetArtefactWithID($artefact_id);
 
-      // Make sure data was retrieved for this model_id, otherwise display error.
-      if (strlen($data['model_data']['modelTitle']) <= 0) {
-        $this->error('Model Not Found', 'A model with a model_id value of ' . $model_id . ' was not found in the database.');
+      // Make sure data was retrieved for this artefact_id, otherwise display error.
+      if (strlen($data['artefact_data']['artefactName']) <= 0) {
+        $this->error('Artefact Not Found', 'A model with an artefact_id value of ' . $artefact_id . ' was not found in the database.');
         return;
       }
 
       $data['header'] = $this->generateHeader(1);
       $data['footer'] = $this->generateFooter();
 
-      $this->load->display('models', $data);
+      $this->load->display('artefacts', $data);
     }
   }
 
@@ -77,7 +78,7 @@ class Controller {
     $data['active_index'] = $active_index;
 
     // Load the names of the models (for use in the dropdown menu).
-    $data['model_names'] = $this->model->dbGetModelNames();
+    $data['artefact_names'] = $this->model->dbGetArtefactNames();
 
     $this->load->display('header', $data);
     return ob_get_clean();
