@@ -43,6 +43,7 @@ class Model {
         artefactDescription TEXT,
         url TEXT,
         x3dResourceName TEXT,
+        landingPageImageName TEXT,
         FOREIGN KEY (artefactId) REFERENCES ArtefactName(artefactId)
       );");
 
@@ -50,18 +51,20 @@ class Model {
   			"INSERT INTO ArtefactName (artefactId, artefactName)
   				VALUES
           (0, 'Falcon Heavy'),
-          (1, 'Dragon V2'),
+          (1, 'Dragon'),
           (2, 'MicroGEO'),
           (3, 'Moon');
         "
       );
 
       $this->db_handle->exec(
-  			"INSERT INTO ArtefactData (artefactId, artefactDescription, url, x3dResourceName)
+  			"INSERT INTO ArtefactData (artefactId, artefactDescription, url, x3dResourceName, landingPageImageName)
   				VALUES
-          (0, 'Falcon Heavy is the most powerful operational rocket in the world by a factor of two. With the ability to lift into orbit nearly 64 metric tons (141,000 lb)—a mass greater than a 737 jetliner loaded with passengers, crew, luggage and fuel—Falcon Heavy can lift more than twice the payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost. Falcon Heavy draws upon the proven heritage and reliability of Falcon 9.', 'http://www.spacex.com/falcon-heavy', 'coke.x3d'),
+          (0, 'Falcon Heavy is the most powerful operational rocket in the world by a factor of two. With the ability to lift into orbit nearly 64 metric tons (141,000 lb)—a mass greater than a 737 jetliner loaded with passengers, crew, luggage and fuel—Falcon Heavy can lift more than twice the payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost. Falcon Heavy draws upon the proven heritage and reliability of Falcon 9.', 'http://www.spacex.com/falcon-heavy', 'falcon_heavy.x3d', 'falcon_heavy.jpg'),
 
-          (1, 'Dragon Description', 'http://www.spacex.com/dragon', 'sprite.x3d');
+          (1, 'Dragon Description', 'http://www.spacex.com/dragon', 'sprite.x3d', 'dragon.jpg'),
+
+          (3, 'Moon Description', 'https://en.wikipedia.org/wiki/Moon', 'sprite.x3d', 'moon.jpg');
         "
       );
 		} catch (PD0EXception $e){
@@ -109,6 +112,7 @@ class Model {
       $artefact_data['artefactDescription'] = $result['artefactDescription'];
       $artefact_data['url'] = $result['url'];
       $artefact_data['x3dResourceName'] = $result['x3dResourceName'];
+      $artefact_data['landingPageImageName'] = $result['landingPageImageName'];
 		} catch (PD0EXception $e) {
       echo 'The following error occured while retreiving data from the database:<br />';
 			print new Exception($e->getMessage());
@@ -144,5 +148,37 @@ class Model {
 		// Send the response (JSON encoded) back to the controller.
 		return $artefact_names;
 	}
+
+  // Fetch artefact information for the landing page.
+  // This includes the artefact names and primary photo name.
+  public function dbLandingPageArtefacts() {
+    try {
+			// Prepare an SQL statement.
+			$sql = "SELECT (artefactId) FROM ArtefactName";
+
+			// Use PDO query() to query the database with the prepared SQL statement.
+			$stmt = $this->db_handle->query($sql);
+
+      $artefacts = null;
+
+      // Counter for each of the returned rows.
+      $i = 0;
+
+      while ($artefactId = $stmt->fetch()) {
+        $artefactId = $artefactId[0];
+        $artefacts[$artefactId]['artefactName'] = $this->dbGetArtefactWithID($artefactId)['artefactName'];
+        $artefacts[$artefactId]['landingPageImageName'] = $this->dbGetArtefactWithID($artefactId)['landingPageImageName'];
+
+        $i++;
+      }
+		} catch (PD0EXception $e) {
+      echo 'The following error occured while retreiving data from the database:<br />';
+			print new Exception($e->getMessage());
+		}
+
+		// Send the response (JSON encoded) back to the controller.
+		return $artefacts;
+  }
+
 }
 ?>
