@@ -62,9 +62,11 @@ class Model {
   				VALUES
           (0, 'Falcon Heavy is the most powerful operational rocket in the world by a factor of two. With the ability to lift into orbit nearly 64 metric tons (141,000 lb)—a mass greater than a 737 jetliner loaded with passengers, crew, luggage and fuel—Falcon Heavy can lift more than twice the payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost. Falcon Heavy draws upon the proven heritage and reliability of Falcon 9.', 'http://www.spacex.com/falcon-heavy', 'falcon_heavy.x3d', 'falcon_heavy.jpg'),
 
-          (1, 'Dragon Description', 'http://www.spacex.com/dragon', 'sprite.x3d', 'dragon.jpg'),
+          (1, 'Dragon Description', 'http://www.spacex.com/dragon', 'falcon_heavy.x3d', 'dragon.jpg'),
 
-          (3, 'Moon Description', 'https://en.wikipedia.org/wiki/Moon', 'sprite.x3d', 'moon.jpg');
+          (2, 'MicroGEO Description', 'http://www.spacex.com/dragon', 'falcon_heavy.x3d', 'microgeo.jpg'),
+
+          (3, 'Moon Description', 'https://en.wikipedia.org/wiki/Moon', 'falcon_heavy.x3d', 'moon.jpg');
         "
       );
 		} catch (PD0EXception $e){
