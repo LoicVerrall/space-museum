@@ -29,9 +29,14 @@ class Controller {
 
   // Render the home screen.
 	public function home() {
+    // TODO: Remove this eventually.
     $this->model->dbInitialiseDatabases();
+
+    $data['artefacts'] = $this->model->dbLandingPageArtefacts();
+
     $data['header'] = $this->generateHeader(0);
     $data['footer'] = $this->generateFooter();
+
 		$this->load->display('home', $data);
 	}
 
