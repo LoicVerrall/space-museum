@@ -20,14 +20,14 @@
           <div class="model3D">
             <x3d>
               <scene>
-                <inline url="assets/x3d/<?php echo $artefact_data['x3dResourceName']; ?>"></inline>
+                <inline nameSpaceName="model" mapDEFToID="true" url="assets/x3d/<?php echo $artefact_data['x3dResourceName']; ?>"></inline>
               </scene>
             </x3d>
           </div>
 
           <div class="camera-btns">
             <div class="btn-group ">
-              <a href="#" class="btn btn-secondary active btn-responsive camera-font" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Switch to the front camera">Front</a>
+              <a href="#" class="btn btn-secondary btn-responsive camera-font" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Switch to the front camera">Front</a>
 
               <a href="#" class="btn btn-secondary btn-responsive camera-font" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Switch to the back camera">Back</a>
 
@@ -37,7 +37,7 @@
 
               <a href="#" class="btn btn-secondary btn-responsive camera-font" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Switch to the top camera">Top</a>
 
-              <a href="#" class="btn btn-primary btn-responsive camera-font" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Toggle spinning the 3D model">Spin</a>
+              <a href="javascript:toggleModelSpinning()" class="btn btn-primary btn-responsive camera-font" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Toggle spinning the 3D model">Spin</a>
             </div>
           </div>
         </div>
