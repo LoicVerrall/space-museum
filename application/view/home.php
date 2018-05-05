@@ -18,7 +18,7 @@
     <div class="row no-gutters">
       <?php for ($i = 0; $i < count($artefacts); $i++){ ?>
         <div class="col-lg-3 col-sm-3">
-          <a class="portfolio-box" href="index.php?page=artefacts&artefact_id=<?php echo $i ?>" style="background-image: url('/assets/images/<?php echo $artefacts[$i]['landingPageImageName'] ?>')">
+          <a class="portfolio-box" href="index.php?page=artefacts&artefact_id=<?php echo $i ?>" style="background-image: url('./assets/images/<?php echo $artefacts[$i]['landingPageImageName'] ?>')">
             <div class="portfolio-box-caption">
               <div class="portfolio-box-caption-content">
                 <div class="project-category text-faded">ARTEFACT</div>
