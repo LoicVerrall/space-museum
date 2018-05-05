@@ -23,7 +23,6 @@ body {
   background-color: rgb(40, 44, 60);
 	font-family: spaceFont, 'Open Sans', sans-serif;
 	color: rgb(50, 50, 50);
-
 }
 
 .main_contents {
@@ -34,55 +33,14 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
 }
 
-#main_3d_image {
-    background-image: url(../assets/images/main_3D.jpg);
-    background-repeat: no-repeat;
-    height: 201px;
-}
-
-#main_text {
-    float: left;
-    margin: 5%;
-    width: 90%;
-    display: block;
-    background-color: rgba(255,255,255,0.75);
-    padding: 10px;
-    border-radius: 5px;
-}
-
-#main_text h2 {
-    color: rgba(0,102,153,1);
-    font-size: 20px;
-    margin-top: 0px;
-    margin-bottom: 5px;
-}
-
-#main_text h3 {
-    font-size: 15px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-#main_text p {
-    font-size: 12px;
-    margin: 0px;
-    line-height: 1.3;
-}
-
-.card {
-    border: 0px solid rgba(0,0,0,.125);
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: rgb(210, 210, 220);
-}
+/* Circular logo */
 
 .space_museum_logo {
   border-radius: 50%;
   background: #34588D;
   height: 40px;
   width: 40px;
-  content:""
-  border: 2px solid white;
+  border: 2px solid lightgray;
   overflow: hidden !important;
   -webkit-transform: translateZ(0);
   -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
@@ -126,6 +84,8 @@ h1, h2, h3, h4, h5, h6 {
   100% { opacity: 0.8 }
 }
 
+/* General Logo */
+
 .brand {
   display: flex;
   align-items: center;
@@ -147,7 +107,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Navigation Bar */
 
 .navbar_space_museum {
-	background-color: rgb(28, 32, 48);
+  background-color: rgb(28, 32, 48);
     min-height: 70px;
 }
 
@@ -167,26 +127,21 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar_space_museum .navbar-nav > li > a {
     color: white;
-	padding-left: 10px;
+    padding-left: 10px;
 }
 
-/* CSS rule to overwrite the bootstrap.css text hover color on the navbar
-*/
 .navbar_space_museum .navbar-nav > li > a:hover,
 .navbar_space_museum .navbar-nav > li > a:focus {
+    /* dim the links as they are hovered over */
     color: rgb(200, 200, 210);
-}
-
-.navbar_coca_cola .navbar-nav .nav-item {
-    margin-top: 00px;
 }
 
 .navbar_space_museum .navbar-nav .nav-item > .active,
 .navbar_space_museum .navbar-nav > .active > a:hover,
 .navbar_space_museum .navbar-nav > .active > a:focus {
-    color: white; /* Font color for active font */
+    color: white; /* Active color */
     background-color: rgb(40, 44, 60); /* dark color for background */
-	border-radius: 5px; /* round the corners */
+    border-radius: 5px; /* round the corners */
 }
 
 /* Burger Menu */
@@ -228,9 +183,94 @@ h1, h2, h3, h4, h5, h6 {
     background-color: rgb(28, 32, 48);
 }
 
+/* Landing Page */
+
+header.masthead {
+  padding-top: 10rem;
+  padding-bottom: calc(14rem - 60px);
+  background-image: url("/assets/images/landing_page/stars_blurred.jpg");
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+header.masthead h1 {
+  font-size: 3rem;
+}
+
+header.masthead p {
+  font-weight: 400;
+}
+
+/* Separator beneath the main heading */
+hr {
+  max-width: 55px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-width: 3px;
+  border-color: rgba(46, 78, 130, 0.8);
+}
+
+.portfolio-box {
+  position: relative;
+  display: block;
+  height: 250px;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.portfolio-box .portfolio-box-caption {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  opacity: 0;
+  color: #fff;
+  background: rgba(46, 78, 130, 0.8);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+/* Only show the overlay if we over over the box */
+.portfolio-box:hover .portfolio-box-caption {
+  opacity: 1;
+}
+
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category,
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+  padding: 0 15px;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
+  font-size: 20px;
+}
+
 /* Drinks Gallery */
 
-.gallery {
+/* .gallery {
     width: 100%;
 }
 
@@ -246,83 +286,28 @@ h1, h2, h3, h4, h5, h6 {
 
 .gallery .img-thumbnail:hover {
 	background-color: rgb(185, 185,	200);
-}
+} */
 
-/* Footer */
+/* Artefact Content */
 
-.footer {
-    color: #FFF;
-    background-color: rgb(28, 32, 48);
-    height: 50px;
-}
-
-.navbar-text > a {
-	color: white;
-	padding: 5px;
-    font-size: 10px;
-    text-decoration: none;
-}rgb(200, 200, 210)
-
-.navbar-text > p {
-    font-size: 10px;
-    text-decoration: none;
-}
-
-.copyright {
-    padding-top: 13px;
-}
-
-.social {
-    padding-top: 0px;
-}
-
-
-
-/* Content */
-
-.camera-btns {
-    /* background-color: rgba(0, 0, 255, 0.3);  */
-    border-color: black;
-    border-style: solid;
-    border-width: 0px;
-    margin-top: 0px;
-    padding: 0px;
-}
-
-.camera-btns > p  {
-    font-size: 15px;
-    color: red;
-    padding: 5px 0px;
-    font-weight: 900;
-}
-
-.camera-font {
-    font-weight: 400;
-    color: white;
-}
-
-.btn-responsive {
-    padding: 10px 10px;
-    font-size: 90%;
-    line-height: 1.2;
-    white-space: normal !important;
-}
-
-.gallery-header {
-    color: black;
+.card {
+    border: 0px solid rgba(0,0,0,.125);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(210, 210, 220);
 }
 
 .model3D  {
     background-color: rgba(255, 255, 255, 0.0); /* Adjust the transparency to bring the color forward */
     border-radius: 5px;
-    border: 0px solid rgba(0, 0, 0, 1.0);
+    border: 0px solid rgba(0, 0, 0, 1.0); /* invisible border */
     padding: 2px;
     height: 500px;
 }
 
 X3D, x3d {
     border-radius: 5px;
-    border: 0px solid rgba(255, 0, 0, 1.0);
+    border: 0px solid rgba(0, 0, 0, 1.0); /* invisible border */
     width: 100%;
     height: 100%;
 }
@@ -335,6 +320,38 @@ X3D, x3d {
 .btn-group .btn {
 	width: 100%;
 }
+
+.btn-responsive {
+    padding: 10px 10px;
+    font-size: 90%;
+    line-height: 1.2;
+    white-space: normal !important;
+}
+
+/* Footer */
+
+.footer {
+    color: #FFF;
+    background-color: rgb(28, 32, 48);
+    height: 50px;
+}
+
+.navbar-text > a {
+  color: inherit;
+	padding: 5px;
+  font-size: 10px;
+  text-decoration: none;
+}
+
+.copyright {
+    padding-top: 13px;
+}
+
+.social {
+    padding-top: 0px;
+}
+
+/* Screen breaks */
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
