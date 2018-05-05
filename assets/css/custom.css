@@ -3,19 +3,19 @@
 
 @font-face {
 	font-family: spaceFont;
-	src: url(../../../assets/fonts/Ubuntu.ttf);
+	src: url(../../assets/fonts/Ubuntu.ttf);
 	weight: normal;
 }
 
 @font-face {
 	font-family: spaceFont;
-	src: url(../../../assets/fonts/Ubuntu-Bold.ttf);
+	src: url(../../assets/fonts/Ubuntu-Bold.ttf);
 	weight: bold;
 }
 
 @font-face {
 	font-family: spaceFont;
-	src: url(../../../assets/fonts/Ubuntu-Light.ttf);
+	src: url(../../assets/fonts/Ubuntu-Light.ttf);
 	weight: light;
 }
 
@@ -188,7 +188,7 @@ h1, h2, h3, h4, h5, h6 {
 header.masthead {
   padding-top: 10rem;
   padding-bottom: calc(14rem - 60px);
-  background-image: url("/assets/images/landing_page/stars_blurred.jpg");
+  background-image: url("../../assets/images/landing_page/stars_blurred.jpg");
   background-position: center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
