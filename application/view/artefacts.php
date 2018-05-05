@@ -18,7 +18,7 @@
 
           <!-- 3D Model -->
           <div class="model3D">
-            <x3d>
+            <x3d id="model">
               <scene>
                 <inline nameSpaceName="model" mapDEFToID="true" url="assets/x3d/<?php echo $artefact_data['x3dResourceName']; ?>"></inline>
               </scene>
