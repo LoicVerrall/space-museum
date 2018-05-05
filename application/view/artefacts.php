@@ -26,16 +26,18 @@
           </div>
 
           <div class="camera-btns">
+            <div class="btn-group">
+              <a href="javascript:cameraFront()" class="btn btn-secondary btn-responsive camera-font">Front</a>
+
+              <a href="javascript:cameraSide()" class="btn btn-secondary btn-responsive camera-font">Side</a>
+
+              <a href="javascript:cameraBottom()" class="btn btn-secondary btn-responsive camera-font">Bottom</a>
+            </div>
+
             <div class="btn-group ">
-              <a href="#" class="btn btn-secondary btn-responsive camera-font" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Switch to the front camera">Front</a>
+              <a href="javascript:toggleHeadlight()" class="btn btn-primary btn-responsive camera-font" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Toggle headlight">Headlight</a>
 
-              <a href="#" class="btn btn-secondary btn-responsive camera-font" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Switch to the back camera">Back</a>
-
-              <a href="#" class="btn btn-secondary btn-responsive camera-font" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Switch to the left camera">Left</a>
-
-              <a href="#" class="btn btn-secondary btn-responsive camera-font" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Switch to the right camera">Right</a>
-
-              <a href="#" class="btn btn-secondary btn-responsive camera-font" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Switch to the top camera">Top</a>
+              <a href="javascript:toggleWireframeMode()" class="btn btn-primary btn-responsive camera-font" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Toggle wireframe mode">Wireframe</a>
 
               <a href="javascript:toggleModelSpinning()" class="btn btn-primary btn-responsive camera-font" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Toggle spinning the 3D model">Spin</a>
             </div>
