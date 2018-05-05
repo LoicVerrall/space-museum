@@ -53,7 +53,9 @@ class Model {
           (0, 'Falcon Heavy'),
           (1, 'Dragon'),
           (2, 'MicroGEO'),
-          (3, 'Moon');
+          (3, 'Saturn'),
+          (4, 'Moon'),
+          (5, 'Mars');
         "
       );
 
@@ -66,7 +68,11 @@ class Model {
 
           (2, 'MicroGEO Description', 'http://www.spacex.com/dragon', 'falcon_heavy.x3d', 'microgeo.jpg'),
 
-          (3, 'Moon Description', 'https://en.wikipedia.org/wiki/Moon', 'falcon_heavy.x3d', 'moon.jpg');
+          (3, 'Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius about nine times that of Earth. The planets most famous feature is its prominent ring system that is composed mostly of ice particles, with a smaller amount of rocky debris and dust. At least 62 moons are known to orbit Saturn, of which 53 are officially named.', 'https://solarsystem.nasa.gov/planets/saturn/overview/', 'saturn.x3d', 'saturn.jpg'),
+
+          (4, 'The fifth largest moon in the solar system, Earths moon is the only place beyond Earth where humans have set foot. The brightest and largest object in our night sky, the moon makes Earth a more livable planet by moderating our home planets wobble on its axis, leading to a relatively stable climate. It also causes tides, creating a rhythm that has guided humans for thousands of years. The moon was likely formed after a Mars-sized body collided with Earth. Earths only natural satellite is simply called the Moon because people did not know other moons existed until Galileo Galilei discovered four moons orbiting Jupiter in 1610.', 'https://solarsystem.nasa.gov/moons/earths-moon/overview/', 'moon.x3d', 'moon.jpg'),
+
+          (5, 'Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System after Mercury. In English, Mars carries a name of the Roman god of war, and is often referred to as the Red Planet because the reddish iron oxide prevalent on its surface gives it a reddish appearance that is distinctive among the astronomical bodies visible to the naked eye. Mars is a terrestrial planet with a thin atmosphere, having surface features reminiscent both of the impact craters of the Moon and the valleys, deserts, and polar ice caps of Earth.', 'https://solarsystem.nasa.gov/planets/mars/overview/', 'mars.x3d', 'mars.jpg');
         "
       );
 		} catch (PD0EXception $e){
