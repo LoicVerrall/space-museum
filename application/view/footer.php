@@ -16,8 +16,5 @@
       </div>
   </nav>
 
-  <!-- JS Scripts that require access to the DOM -->
-  <script src="assets/js/custom.js"></script>
-
 </body>
 </html>
