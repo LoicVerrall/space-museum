@@ -51,7 +51,7 @@ class Model {
   			"INSERT INTO ArtefactName (artefactId, artefactName)
   				VALUES
           (0, 'Falcon Heavy'),
-          (1, 'Dragon'),
+          (1, 'Space Shuttle'),
           (2, 'MicroGEO'),
           (3, 'Saturn'),
           (4, 'Moon'),
@@ -66,7 +66,7 @@ class Model {
   				VALUES
           (0, 'Falcon Heavy is the most powerful operational rocket in the world by a factor of two. With the ability to lift into orbit nearly 64 metric tons (141,000 lb)—a mass greater than a 737 jetliner loaded with passengers, crew, luggage and fuel—Falcon Heavy can lift more than twice the payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost. Falcon Heavy draws upon the proven heritage and reliability of Falcon 9.', 'http://www.spacex.com/falcon-heavy', 'falcon_heavy', 'falcon_heavy.jpg'),
 
-          (1, 'Dragon Description', 'http://www.spacex.com/dragon', 'falcon_heavy', 'dragon.jpg'),
+          (1, 'The Space Shuttle was a partially reusable low Earth orbital spacecraft system operated by the U.S. National Aeronautics and Space Administration (NASA), as part of the Space Shuttle program. Its official program name was Space Transportation System (STS), taken from a 1969 plan for a system of reusable spacecraft of which it was the only item funded for development. The first of four orbital test flights occurred in 1981, leading to operational flights beginning in 1982. In addition to the prototype whose completion was cancelled, five complete Shuttle systems were built and used on a total of 135 missions from 1981 to 2011, launched from the Kennedy Space Center (KSC) in Florida. Operational missions launched numerous satellites, interplanetary probes, and the Hubble Space Telescope (HST); conducted science experiments in orbit; and participated in construction and servicing of the International Space Station. The Shuttle fleets total mission time was 1322 days, 19 hours, 21 minutes and 23 seconds.', 'https://www.nasa.gov/mission_pages/shuttle/main/index.html', 'space_shuttle', 'space_shuttle.jpg'),
 
           (2, 'MicroGEO Description', 'http://www.spacex.com/dragon', 'falcon_heavy', 'microgeo.jpg'),
 
