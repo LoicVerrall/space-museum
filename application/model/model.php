@@ -56,7 +56,8 @@ class Model {
           (3, 'Saturn'),
           (4, 'Moon'),
           (5, 'Mars'),
-          (6, 'Earth');
+          (6, 'Earth'),
+          (7, 'Jupiter');
         "
       );
 
@@ -75,7 +76,9 @@ class Model {
 
           (5, 'Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System after Mercury. In English, Mars carries a name of the Roman god of war, and is often referred to as the Red Planet because the reddish iron oxide prevalent on its surface gives it a reddish appearance that is distinctive among the astronomical bodies visible to the naked eye. Mars is a terrestrial planet with a thin atmosphere, having surface features reminiscent both of the impact craters of the Moon and the valleys, deserts, and polar ice caps of Earth.', 'https://solarsystem.nasa.gov/planets/mars/overview/', 'mars', 'mars.jpg'),
 
-          (6, 'Earth is the third planet from the Sun and the only object in the Universe known to harbor life. According to radiometric dating and other sources of evidence, Earth formed over 4.5 billion years ago. Earths gravity interacts with other objects in space, especially the Sun and the Moon, Earths only natural satellite. Earth revolves around the Sun in 365.26 days, a period known as an Earth year. During this time, Earth rotates about its axis about 366.26 times.', 'https://solarsystem.nasa.gov/planets/earth/overview/', 'earth', 'earth.jpg');
+          (6, 'Earth is the third planet from the Sun and the only object in the Universe known to harbor life. According to radiometric dating and other sources of evidence, Earth formed over 4.5 billion years ago. Earths gravity interacts with other objects in space, especially the Sun and the Moon, Earths only natural satellite. Earth revolves around the Sun in 365.26 days, a period known as an Earth year. During this time, Earth rotates about its axis about 366.26 times.', 'https://solarsystem.nasa.gov/planets/earth/overview/', 'earth', 'earth.jpg'),
+
+          (7, 'Though once big enough to swallow three Earths with room to spare, Jupiters Great Red Spot has been shrinking for a century and a half. The Great Red Spot is a giant oval of crimson-colored clouds in Jupiters southern hemisphere with wind speeds greater than any storm on Earth. Measuring 10,000 miles (16,000 kilometers) in width as of April 3, 2017, the Great Red Spot is 1.3 times as wide as Earth. The fifth planet from the Sun, and the most massive in our solar system, has a long history surprising scientists—all the way back to 1610 when Galileo Galilei found the first moons beyond Earth. That discovery changed the way we see the universe.', 'https://solarsystem.nasa.gov/planets/jupiter/overview/', 'jupiter', 'jupiter.jpg');
         "
       );
 		} catch (PD0EXception $e){
@@ -125,7 +128,7 @@ class Model {
       $artefact_data['resourceName'] = $result['resourceName'];
       $artefact_data['x3dFilename'] = $artefact_data['resourceName'] . '.x3d';
 
-      if ($artefact_name === 'Moon' || $artefact_name === 'Mars' || $artefact_name === 'Earth') {
+      if ($artefact_name === 'Moon' || $artefact_name === 'Mars' || $artefact_name === 'Earth' || $artefact_name === 'Jupiter') {
         $artefact_data['x3dFilename'] = 'generic_planet.x3d';
       }
 
