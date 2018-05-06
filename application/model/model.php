@@ -52,7 +52,7 @@ class Model {
   				VALUES
           (0, 'Falcon Heavy'),
           (1, 'Space Shuttle'),
-          (2, 'MicroGEO'),
+          (2, 'Shenzhou'),
           (3, 'Saturn'),
           (4, 'Moon'),
           (5, 'Mars'),
@@ -68,7 +68,7 @@ class Model {
 
           (1, 'The Space Shuttle was a partially reusable low Earth orbital spacecraft system operated by the U.S. National Aeronautics and Space Administration (NASA), as part of the Space Shuttle program. Its official program name was Space Transportation System (STS), taken from a 1969 plan for a system of reusable spacecraft of which it was the only item funded for development. The first of four orbital test flights occurred in 1981, leading to operational flights beginning in 1982. In addition to the prototype whose completion was cancelled, five complete Shuttle systems were built and used on a total of 135 missions from 1981 to 2011, launched from the Kennedy Space Center (KSC) in Florida. Operational missions launched numerous satellites, interplanetary probes, and the Hubble Space Telescope (HST); conducted science experiments in orbit; and participated in construction and servicing of the International Space Station. The Shuttle fleets total mission time was 1322 days, 19 hours, 21 minutes and 23 seconds.', 'https://www.nasa.gov/mission_pages/shuttle/main/index.html', 'space_shuttle', 'space_shuttle.jpg'),
 
-          (2, 'MicroGEO Description', 'http://www.spacex.com/dragon', 'falcon_heavy', 'microgeo.jpg'),
+          (2, 'Shenzhou is a Spacecraft that was developed and is operated by the People’s Republic of China and is desgined for human Space Flight. Shenzhou means Divine Craft. It is based on the Russian Soyuz vehicle, however, it is larger in size and uses all-new construction and materials. The Spacecraft made its maiden voyage in 1999 and performed its first manned mission in 2003 making Yang Liwei the first Taikonaut to orbit Earth. Shenzhou Spacecraft are launched aboard Long March 2F Vehicles that are based on the CZ-2E Rocket, but feature a launch escape system and go through a different quality control process. CZ-2F launches from the Jiquan Satellite Launch Center. Mission Control for Shenzhou Missions is the Beijing Aerospace Command and Control Center.', 'http://spaceflight101.com/spacecraft/shenzhou-spacecraft-overview/', 'shenzhou', 'shenzhou.jpg'),
 
           (3, 'Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius about nine times that of Earth. The planets most famous feature is its prominent ring system that is composed mostly of ice particles, with a smaller amount of rocky debris and dust. At least 62 moons are known to orbit Saturn, of which 53 are officially named.', 'https://solarsystem.nasa.gov/planets/saturn/overview/', 'saturn', 'saturn.jpg'),
 
