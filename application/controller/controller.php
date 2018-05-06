@@ -21,6 +21,9 @@ class Controller {
       case "artefacts":
         $this->artefacts();
         break;
+      case "contact":
+        $this->contact();
+        break;
       default:
         // Show an error message to the user.
         $this->error('Unknown Destination', 'Unable to navigate to page: ' . $page . '.');
@@ -76,6 +79,14 @@ class Controller {
       $this->load->display('artefacts', $data);
     }
   }
+
+  // Render the contact screen.
+	public function contact() {
+    $data['header'] = $this->generateHeader(2);
+    $data['footer'] = $this->generateFooter();
+
+		$this->load->display('contact', $data);
+	}
 
   public function generateHeader($active_index) {
     ob_start();

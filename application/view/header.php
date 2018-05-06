@@ -63,14 +63,9 @@
           </div>
         </li>
 
-        <!-- Blog -->
+        <!-- Contact -->
         <li class="nav-item">
-          <a class="nav-link <?php echo ($active_index == 2 ? 'active' : '') ?>" href="index.php?page=blog">Blog</a>
-        </li>
-
-        <!-- Contact Us -->
-        <li class="nav-item">
-          <a class="nav-link <?php echo ($active_index == 3 ? 'active' : '') ?>" href="index.php?page=contact_us">Contact Us</a>
+          <a class="nav-link <?php echo ($active_index == 2 ? 'active' : '') ?>" href="index.php?page=contact">Contact Me</a>
         </li>
       </ul>
     </div>
