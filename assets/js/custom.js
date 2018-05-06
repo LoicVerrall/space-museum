@@ -1,6 +1,22 @@
 $(document).ready(function () {
   $('[data-toggle="popover"]').popover()
+
+  let url = new URL(window.location.href)
+  let artefactId = url.searchParams.get('artefact_id')
 })
+
+function swapTextureIfAppropriate(resourceName) {
+  switch (resourceName) {
+    case 'mars':
+    case 'moon':
+    case 'earth':
+      let textureURL = './textures/' + resourceName + '/surface_texture.jpg'
+      document.getElementById('model__Texture').setAttribute('url', textureURL)
+      break
+    default:
+      break
+  }
+}
 
 var modelIsSpinning = false
 

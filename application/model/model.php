@@ -42,7 +42,7 @@ class Model {
         artefactId INTEGER PRIMARY KEY,
         artefactDescription TEXT,
         url TEXT,
-        x3dResourceName TEXT,
+        resourceName TEXT,
         landingPageImageName TEXT,
         FOREIGN KEY (artefactId) REFERENCES ArtefactName(artefactId)
       );");
@@ -55,24 +55,27 @@ class Model {
           (2, 'MicroGEO'),
           (3, 'Saturn'),
           (4, 'Moon'),
-          (5, 'Mars');
+          (5, 'Mars'),
+          (6, 'Earth');
         "
       );
 
       $this->db_handle->exec(
-  			"INSERT INTO ArtefactData (artefactId, artefactDescription, url, x3dResourceName, landingPageImageName)
+  			"INSERT INTO ArtefactData (artefactId, artefactDescription, url, resourceName, landingPageImageName)
   				VALUES
-          (0, 'Falcon Heavy is the most powerful operational rocket in the world by a factor of two. With the ability to lift into orbit nearly 64 metric tons (141,000 lb)—a mass greater than a 737 jetliner loaded with passengers, crew, luggage and fuel—Falcon Heavy can lift more than twice the payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost. Falcon Heavy draws upon the proven heritage and reliability of Falcon 9.', 'http://www.spacex.com/falcon-heavy', 'falcon_heavy.x3d', 'falcon_heavy.jpg'),
+          (0, 'Falcon Heavy is the most powerful operational rocket in the world by a factor of two. With the ability to lift into orbit nearly 64 metric tons (141,000 lb)—a mass greater than a 737 jetliner loaded with passengers, crew, luggage and fuel—Falcon Heavy can lift more than twice the payload of the next closest operational vehicle, the Delta IV Heavy, at one-third the cost. Falcon Heavy draws upon the proven heritage and reliability of Falcon 9.', 'http://www.spacex.com/falcon-heavy', 'falcon_heavy', 'falcon_heavy.jpg'),
 
-          (1, 'Dragon Description', 'http://www.spacex.com/dragon', 'falcon_heavy.x3d', 'dragon.jpg'),
+          (1, 'Dragon Description', 'http://www.spacex.com/dragon', 'falcon_heavy', 'dragon.jpg'),
 
-          (2, 'MicroGEO Description', 'http://www.spacex.com/dragon', 'falcon_heavy.x3d', 'microgeo.jpg'),
+          (2, 'MicroGEO Description', 'http://www.spacex.com/dragon', 'falcon_heavy', 'microgeo.jpg'),
 
-          (3, 'Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius about nine times that of Earth. The planets most famous feature is its prominent ring system that is composed mostly of ice particles, with a smaller amount of rocky debris and dust. At least 62 moons are known to orbit Saturn, of which 53 are officially named.', 'https://solarsystem.nasa.gov/planets/saturn/overview/', 'saturn.x3d', 'saturn.jpg'),
+          (3, 'Saturn is the sixth planet from the Sun and the second-largest in the Solar System, after Jupiter. It is a gas giant with an average radius about nine times that of Earth. The planets most famous feature is its prominent ring system that is composed mostly of ice particles, with a smaller amount of rocky debris and dust. At least 62 moons are known to orbit Saturn, of which 53 are officially named.', 'https://solarsystem.nasa.gov/planets/saturn/overview/', 'saturn', 'saturn.jpg'),
 
-          (4, 'The fifth largest moon in the solar system, Earths moon is the only place beyond Earth where humans have set foot. The brightest and largest object in our night sky, the moon makes Earth a more livable planet by moderating our home planets wobble on its axis, leading to a relatively stable climate. It also causes tides, creating a rhythm that has guided humans for thousands of years. The moon was likely formed after a Mars-sized body collided with Earth. Earths only natural satellite is simply called the Moon because people did not know other moons existed until Galileo Galilei discovered four moons orbiting Jupiter in 1610.', 'https://solarsystem.nasa.gov/moons/earths-moon/overview/', 'moon.x3d', 'moon.jpg'),
+          (4, 'The fifth largest moon in the solar system, Earths moon is the only place beyond Earth where humans have set foot. The brightest and largest object in our night sky, the moon makes Earth a more livable planet by moderating our home planets wobble on its axis, leading to a relatively stable climate. It also causes tides, creating a rhythm that has guided humans for thousands of years. The moon was likely formed after a Mars-sized body collided with Earth. Earths only natural satellite is simply called the Moon because people did not know other moons existed until Galileo Galilei discovered four moons orbiting Jupiter in 1610.', 'https://solarsystem.nasa.gov/moons/earths-moon/overview/', 'moon', 'moon.jpg'),
 
-          (5, 'Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System after Mercury. In English, Mars carries a name of the Roman god of war, and is often referred to as the Red Planet because the reddish iron oxide prevalent on its surface gives it a reddish appearance that is distinctive among the astronomical bodies visible to the naked eye. Mars is a terrestrial planet with a thin atmosphere, having surface features reminiscent both of the impact craters of the Moon and the valleys, deserts, and polar ice caps of Earth.', 'https://solarsystem.nasa.gov/planets/mars/overview/', 'mars.x3d', 'mars.jpg');
+          (5, 'Mars is the fourth planet from the Sun and the second-smallest planet in the Solar System after Mercury. In English, Mars carries a name of the Roman god of war, and is often referred to as the Red Planet because the reddish iron oxide prevalent on its surface gives it a reddish appearance that is distinctive among the astronomical bodies visible to the naked eye. Mars is a terrestrial planet with a thin atmosphere, having surface features reminiscent both of the impact craters of the Moon and the valleys, deserts, and polar ice caps of Earth.', 'https://solarsystem.nasa.gov/planets/mars/overview/', 'mars', 'mars.jpg'),
+
+          (6, 'Earth is the third planet from the Sun and the only object in the Universe known to harbor life. According to radiometric dating and other sources of evidence, Earth formed over 4.5 billion years ago. Earths gravity interacts with other objects in space, especially the Sun and the Moon, Earths only natural satellite. Earth revolves around the Sun in 365.26 days, a period known as an Earth year. During this time, Earth rotates about its axis about 366.26 times.', 'https://solarsystem.nasa.gov/planets/earth/overview/', 'earth', 'earth.jpg');
         "
       );
 		} catch (PD0EXception $e){
@@ -119,7 +122,13 @@ class Model {
       $artefact_data['artefactName'] = $artefact_name;
       $artefact_data['artefactDescription'] = $result['artefactDescription'];
       $artefact_data['url'] = $result['url'];
-      $artefact_data['x3dResourceName'] = $result['x3dResourceName'];
+      $artefact_data['resourceName'] = $result['resourceName'];
+      $artefact_data['x3dFilename'] = $artefact_data['resourceName'] . '.x3d';
+
+      if ($artefact_name === 'Moon' || $artefact_name === 'Mars' || $artefact_name === 'Earth') {
+        $artefact_data['x3dFilename'] = 'generic_planet.x3d';
+      }
+
       $artefact_data['landingPageImageName'] = $result['landingPageImageName'];
 		} catch (PD0EXception $e) {
       echo 'The following error occured while retreiving data from the database:<br />';

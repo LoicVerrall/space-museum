@@ -20,7 +20,7 @@
           <div class="model3D">
             <x3d id="model">
               <scene>
-                <inline nameSpaceName="model" mapDEFToID="true" url="assets/x3d/<?php echo $artefact_data['x3dResourceName']; ?>"></inline>
+                <inline nameSpaceName="model" mapDEFToID="true" url="assets/x3d/<?php echo $artefact_data['x3dFilename']; ?>" onload="javascript:swapTextureIfAppropriate('<?php echo $artefact_data['resourceName']; ?>')"></inline>
               </scene>
             </x3d>
           </div>
