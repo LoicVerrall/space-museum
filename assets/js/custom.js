@@ -11,6 +11,7 @@ function swapTextureIfAppropriate(resourceName) {
     case 'moon':
     case 'earth':
     case 'jupiter':
+    case 'sun':
       let textureURL = './textures/' + resourceName + '/surface_texture.jpg'
       document.getElementById('model__Texture').setAttribute('url', textureURL)
       break

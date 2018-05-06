@@ -57,7 +57,8 @@ class Model {
           (4, 'Moon'),
           (5, 'Mars'),
           (6, 'Earth'),
-          (7, 'Jupiter');
+          (7, 'Jupiter'),
+          (8, 'Sun');
         "
       );
 
@@ -78,7 +79,9 @@ class Model {
 
           (6, 'Earth is the third planet from the Sun and the only object in the Universe known to harbor life. According to radiometric dating and other sources of evidence, Earth formed over 4.5 billion years ago. Earths gravity interacts with other objects in space, especially the Sun and the Moon, Earths only natural satellite. Earth revolves around the Sun in 365.26 days, a period known as an Earth year. During this time, Earth rotates about its axis about 366.26 times.', 'https://solarsystem.nasa.gov/planets/earth/overview/', 'earth', 'earth.jpg'),
 
-          (7, 'Though once big enough to swallow three Earths with room to spare, Jupiters Great Red Spot has been shrinking for a century and a half. The Great Red Spot is a giant oval of crimson-colored clouds in Jupiters southern hemisphere with wind speeds greater than any storm on Earth. Measuring 10,000 miles (16,000 kilometers) in width as of April 3, 2017, the Great Red Spot is 1.3 times as wide as Earth. The fifth planet from the Sun, and the most massive in our solar system, has a long history surprising scientists—all the way back to 1610 when Galileo Galilei found the first moons beyond Earth. That discovery changed the way we see the universe.', 'https://solarsystem.nasa.gov/planets/jupiter/overview/', 'jupiter', 'jupiter.jpg');
+          (7, 'Though once big enough to swallow three Earths with room to spare, Jupiters Great Red Spot has been shrinking for a century and a half. The Great Red Spot is a giant oval of crimson-colored clouds in Jupiters southern hemisphere with wind speeds greater than any storm on Earth. Measuring 10,000 miles (16,000 kilometers) in width as of April 3, 2017, the Great Red Spot is 1.3 times as wide as Earth. The fifth planet from the Sun, and the most massive in our solar system, has a long history surprising scientists—all the way back to 1610 when Galileo Galilei found the first moons beyond Earth. That discovery changed the way we see the universe.', 'https://solarsystem.nasa.gov/planets/jupiter/overview/', 'jupiter', 'jupiter.jpg'),
+
+          (8, 'The Sun is the star at the center of the Solar System. It is a nearly perfect sphere of hot plasma, with internal convective motion that generates a magnetic field via a dynamo process. It is by far the most important source of energy for life on Earth. Its diameter is about 1.39 million kilometers, i.e. 109 times that of Earth, and its mass is about 330,000 times that of Earth, accounting for about 99.86% of the total mass of the Solar System. About three quarters of the Suns mass consists of hydrogen (~73%); the rest is mostly helium (~25%), with much smaller quantities of heavier elements, including oxygen, carbon, neon, and iron.', 'https://www.nasa.gov/sun/', 'sun', 'sun.jpg');
         "
       );
 		} catch (PD0EXception $e){
@@ -128,7 +131,7 @@ class Model {
       $artefact_data['resourceName'] = $result['resourceName'];
       $artefact_data['x3dFilename'] = $artefact_data['resourceName'] . '.x3d';
 
-      if ($artefact_name === 'Moon' || $artefact_name === 'Mars' || $artefact_name === 'Earth' || $artefact_name === 'Jupiter') {
+      if ($artefact_name === 'Moon' || $artefact_name === 'Mars' || $artefact_name === 'Earth' || $artefact_name === 'Jupiter' || $artefact_name === 'Sun') {
         $artefact_data['x3dFilename'] = 'generic_planet.x3d';
       }
 
