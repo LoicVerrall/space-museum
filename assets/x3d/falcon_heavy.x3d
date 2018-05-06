@@ -5,42 +5,19 @@
     <TimeSensor DEF='RotationTimer' cycleInterval='3' loop='true' enabled='false'/>
     <Viewpoint DEF='CameraFront' description='CameraFront-61' orientation='0 1 0 -1.554' position='-993.2 0 16.88' fieldOfView='0.6024'/>
     <NavigationInfo DEF='Headlight' headlight='false' type='"EXAMINE"'/>
-    <PointLight DEF='Omni001-38' intensity='0.2' location='91.05 0 -75.72' radius='2142'/>
-    <PointLight DEF='Omni002-39' intensity='0.2' location='97.17 0 80.73' radius='2142'/>
-    <PointLight DEF='Omni003-40' intensity='0.2' location='-71.59 0 79.81' radius='2142'/>
-    <PointLight DEF='Omni004-42' intensity='0.2' location='-72.66 0 -77.14' radius='2142'/>
-    <PointLight DEF='Omni005-43' intensity='0.2' location='-0.2865 187.1 -94.8' radius='2142'/>
-    <PointLight DEF='Omni006-44' intensity='0.2' location='-0.1087 187.1 90.24' radius='2142'/>
-    <PointLight DEF='Omni007-45' intensity='0.2' location='98.01 187.1 -0.2346' radius='2142'/>
-    <PointLight DEF='Omni008-46' intensity='0.2' location='-75.65 187.1 0.2987' radius='2142'/>
-    <PointLight DEF='Omni009-47' intensity='0.2' location='-0.1087 187.1 90.24' radius='2142'/>
-    <PointLight DEF='Omni010-48' intensity='0.2' location='98.01 187.1 -0.2346' radius='2142'/>
-    <PointLight DEF='Omni011-49' intensity='0.2' location='-75.65 187.1 0.2987' radius='2142'/>
-    <PointLight DEF='Omni012-50' intensity='0.2' location='-0.2865 187.1 -94.8' radius='2142'/>
-    <PointLight DEF='Omni013-51' intensity='0.2' location='-0.1087 -219.2 90.24' radius='2142'/>
-    <PointLight DEF='Omni014-52' intensity='0.2' location='98.01 -219.2 -0.2346' radius='2142'/>
-    <PointLight DEF='Omni015-53' intensity='0.2' location='-100.6 -219.2 0.2987' radius='2142'/>
-    <PointLight DEF='Omni016-54' intensity='0.2' location='-0.2865 -219.2 -94.8' radius='2142'/>
-    <PointLight DEF='Omni018-56' intensity='0.2' location='-0.5961 -444.7 -0.2346' radius='2142'/>
+    <PointLight DEF='Omni018-56' location='-0.5961 -444.7 -0.2346' radius='2207'/>
     <Viewpoint DEF='CameraSide' description='CameraSide-68' orientation='0 1 0 -0.0003414' position='-0.3375 0 988.8' fieldOfView='0.6024'/>
     <Viewpoint DEF='CameraBottom' description='CameraBottom-70' orientation='-0.5753 -0.5784 0.5784 -2.097' position='0 -550 0' fieldOfView='0.6024'/>
-    <PointLight DEF='Omni019-72' intensity='0.2' location='-0.2865 304.3 -94.8' radius='2142'/>
-    <PointLight DEF='Omni020-73' intensity='0.2' location='98.01 304.3 -0.2346' radius='2142'/>
-    <PointLight DEF='Omni021-74' intensity='0.2' location='-0.1087 304.3 90.24' radius='2142'/>
-    <PointLight DEF='Omni022-75' intensity='0.2' location='-75.65 304.3 0.2987' radius='2142'/>
-    <PointLight DEF='Omni023-76' intensity='0.2' location='0 378.2 0' radius='2142'/>
-    <PointLight DEF='Omni024-77' intensity='0.2' location='-71.59 97.7 79.81' radius='2142'/>
-    <PointLight DEF='Omni025-78' intensity='0.2' location='-72.66 97.7 -77.14' radius='2142'/>
-    <PointLight DEF='Omni026-79' intensity='0.2' location='91.05 97.7 -75.72' radius='2142'/>
-    <PointLight DEF='Omni027-80' intensity='0.2' location='97.17 97.7 80.73' radius='2142'/>
-    <PointLight DEF='Omni028-81' intensity='0.2' location='-105.3 -102.3 -38.37' radius='2142'/>
-    <PointLight DEF='Omni029-82' intensity='0.2' location='63.65 -102.3 -114.6' radius='2142'/>
-    <PointLight DEF='Omni030-83' intensity='0.2' location='84.43 -102.3 45.22' radius='2142'/>
-    <PointLight DEF='Omni031-84' intensity='0.2' location='-29.97 -102.3 71.88' radius='2142'/>
-    <PointLight DEF='Omni032-85' intensity='0.2' location='98.01 -324.8 -0.2346' radius='2142'/>
-    <PointLight DEF='Omni033-86' intensity='0.2' location='-0.2865 -324.8 -94.8' radius='2142'/>
-    <PointLight DEF='Omni034-87' intensity='0.2' location='-0.1087 -324.8 90.24' radius='2142'/>
-    <PointLight DEF='Omni035-88' intensity='0.2' location='-75.65 -324.8 0.2987' radius='2142'/>
+    <PointLight DEF='Omni019-72' location='90.73 238 -94.8' radius='2207'/>
+    <PointLight DEF='Omni021-74' location='90.91 238 90.24' radius='2207'/>
+    <PointLight DEF='Omni022-75' location='-115.5 238 0.2987' radius='2207'/>
+    <PointLight DEF='Omni023-76' location='0 378.2 0' radius='2207'/>
+    <PointLight DEF='Omni024-89' location='136.7 -74.94 -2.168' radius='2207'/>
+    <PointLight DEF='Omni025-90' location='-58.48 -74.94 110.1' radius='2207'/>
+    <PointLight DEF='Omni026-91' location='-12.08 -74.94 -112.2' radius='2207'/>
+    <PointLight DEF='Omni027-92' location='-47.18 -243.9 -92.81' radius='2207'/>
+    <PointLight DEF='Omni028-93' location='159.6 -243.9 -3.674' radius='2207'/>
+    <PointLight DEF='Omni029-94' location='-46.28 -243.9 92.23' radius='2207'/>
     <Transform DEF='FalconHeavy-66' translation='0.1218 2.565 3.914'>
       <OrientationInterpolator DEF='FalconHeavy-66-ROT-INTERP' key='0 0.05 0.1 0.15 0.2 0.25 0.3 0.35 0.4 0.45 0.5 0.55 0.6 0.65 0.7 0.75 0.8 0.85 0.9 0.95 1' keyValue='1 0 0 0 0 -1 0 -0.3142 0 -1 0 -0.6283 0 -1 0 -0.9425 0 -1 0 -1.257 0 -1 0 -1.571 0 -1 0 -1.885 0 -1 0 -2.199 0 -1 0 -2.513 0 -1 0 -2.827 0 -1 0 -3.142 0 -1 0 -3.456 0 -1 0 -3.77 0 -1 0 -4.084 0 1 0 -1.885 0 1 0 -1.571 0 1 0 -1.257 0 1 0 -0.9425 0 1 0 -0.6283 0 1 0 -0.3142 1 0 0 0'/>
       <Transform DEF='Connector-36' rotation='0.5774 -0.5774 0.5774 -4.189' translation='-13.43 50.68 0.03749'>
@@ -382,13 +359,13 @@
         </Shape>
       </Transform>
     </Transform>
-    <ROUTE fromNode='FalconHeavy-66-ROT-INTERP' fromField='value_changed' toNode='FalconHeavy-66' toField='set_rotation'/>
-    <ROUTE fromNode='RotationTimer' fromField='fraction_changed' toNode='FalconHeavy-66-ROT-INTERP' toField='set_fraction'/>
-    <ROUTE fromNode='Connector-36-POS-INTERP' fromField='value_changed' toNode='Connector-36' toField='set_translation'/>
-    <ROUTE fromNode='RotationTimer' fromField='fraction_changed' toNode='Connector-36-POS-INTERP' toField='set_fraction'/>
-    <ROUTE fromNode='Connector-36-ROT-INTERP' fromField='value_changed' toNode='Connector-36' toField='set_rotation'/>
-    <ROUTE fromNode='RotationTimer' fromField='fraction_changed' toNode='Connector-36-ROT-INTERP' toField='set_fraction'/>
     <ROUTE fromNode='E1C-12-POS-INTERP' fromField='value_changed' toNode='E1C-12' toField='set_translation'/>
+    <ROUTE fromNode='RotationTimer' fromField='fraction_changed' toNode='Connector-36-POS-INTERP' toField='set_fraction'/>
+    <ROUTE fromNode='RotationTimer' fromField='fraction_changed' toNode='Connector-36-ROT-INTERP' toField='set_fraction'/>
+    <ROUTE fromNode='Connector-36-ROT-INTERP' fromField='value_changed' toNode='Connector-36' toField='set_rotation'/>
+    <ROUTE fromNode='Connector-36-POS-INTERP' fromField='value_changed' toNode='Connector-36' toField='set_translation'/>
+    <ROUTE fromNode='RotationTimer' fromField='fraction_changed' toNode='FalconHeavy-66-ROT-INTERP' toField='set_fraction'/>
+    <ROUTE fromNode='FalconHeavy-66-ROT-INTERP' fromField='value_changed' toNode='FalconHeavy-66' toField='set_rotation'/>
     <ROUTE fromNode='Connector_back-37-POS-INTERP' fromField='value_changed' toNode='Connector_back-37' toField='set_translation'/>
     <ROUTE fromNode='RotationTimer' fromField='fraction_changed' toNode='Connector_back-37-POS-INTERP' toField='set_fraction'/>
     <ROUTE fromNode='Connector_back-37-ROT-INTERP' fromField='value_changed' toNode='Connector_back-37' toField='set_rotation'/>
@@ -400,7 +377,6 @@
     <ROUTE fromNode='RotationTimer' fromField='fraction_changed' toNode='E1C002-31-POS-INTERP' toField='set_fraction'/>
     <ROUTE fromNode='E2C-13-POS-INTERP' fromField='value_changed' toNode='E2C-13' toField='set_translation'/>
     <ROUTE fromNode='RotationTimer' fromField='fraction_changed' toNode='E2C-13-POS-INTERP' toField='set_fraction'/>
-    <ROUTE fromNode='RotationTimer' fromField='fraction_changed' toNode='L_booster-21-POS-INTERP' toField='set_fraction'/>
     <ROUTE fromNode='E2C001-27-POS-INTERP' fromField='value_changed' toNode='E2C001-27' toField='set_translation'/>
     <ROUTE fromNode='RotationTimer' fromField='fraction_changed' toNode='E2C001-27-POS-INTERP' toField='set_fraction'/>
     <ROUTE fromNode='E2C002-30-POS-INTERP' fromField='value_changed' toNode='E2C002-30' toField='set_translation'/>
@@ -436,6 +412,7 @@
     <ROUTE fromNode='E7R001-35-POS-INTERP' fromField='value_changed' toNode='E7R001-35' toField='set_translation'/>
     <ROUTE fromNode='RotationTimer' fromField='fraction_changed' toNode='E7R001-35-POS-INTERP' toField='set_fraction'/>
     <ROUTE fromNode='L_booster-21-POS-INTERP' fromField='value_changed' toNode='L_booster-21' toField='set_translation'/>
+    <ROUTE fromNode='RotationTimer' fromField='fraction_changed' toNode='L_booster-21-POS-INTERP' toField='set_fraction'/>
     <ROUTE fromNode='M_booster-2-POS-INTERP' fromField='value_changed' toNode='M_booster-2' toField='set_translation'/>
     <ROUTE fromNode='RotationTimer' fromField='fraction_changed' toNode='M_booster-2-POS-INTERP' toField='set_fraction'/>
     <ROUTE fromNode='R_booster-6-POS-INTERP' fromField='value_changed' toNode='R_booster-6' toField='set_translation'/>
