@@ -8,4 +8,10 @@
 
 ### Embedding Content
 - Load content (and images, possibly sounds/videos) from database.
-- Add gallery.
+- Add gallery (in same card as description, but under a different tab).
+	- Add images for each artefact.
+	- Possibly load sound/video too (from database?).
+	- Use AJAX and JSON to transport some data from backend to front end.
+- Add Shenzhou 3D model.
+- phpDocumentor.
+	- Link to documentation.
