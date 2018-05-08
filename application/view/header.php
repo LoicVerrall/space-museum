@@ -19,6 +19,9 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <script src='https://www.x3dom.org/x3dom/release/x3dom.js'></script>
   <script src="assets/js/custom.js"></script>
+  <script src="assets/js/content_swapping.js"></script>
+  <script src="assets/js/gallery_generator.js"></script>
+  <script src="assets/js/x3d_manipulation.js"></script>
 </head>
 
 <body>

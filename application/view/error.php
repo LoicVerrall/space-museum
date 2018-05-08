@@ -5,7 +5,7 @@
 
   <!-- Home Content -->
   <div class="main_contents">
-    <div class="card bg-warning text-dark">
+    <div class="card bg-warning text-center text-dark">
       <div class="card-header">
         Oops, Something Went Wrong... 🤭
       </div>

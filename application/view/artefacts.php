@@ -50,31 +50,46 @@
       </div>
     </div>
 
-    <!-- Media Gallery & Description Column -->
+    <!-- Model Info -->
     <div class="col-sm-5">
 
-      <!-- Description -->
       <div class="card">
-        <div class="card-header gallery-header">Description</div>
-        <div class="card-body">
-          <p><?php echo $artefact_data['artefactDescription']; ?></p>
-          <a href="<?php echo $artefact_data['url']; ?>" class="btn btn-info" target='_blank'>More Info</a>
+        <div class="card-header">
+          <!-- Header -->
+          <div class="gallery-header">Model Information</div>
+          <br />
+
+          <ul class="nav nav-tabs card-header-tabs">
+            <!-- Description -->
+            <li class="nav-item">
+              <a class="nav-link active" id="description_model_info_button" href="javascript:swapModelInfoTab('description')">Description</a>
+            </li>
+
+            <!-- Media Gallery -->
+            <li class="nav-item">
+              <a class="nav-link" id="gallery_model_info_button" href="javascript:swapModelInfoTab('gallery')">Gallery</a>
+            </li>
+
+          </ul>
         </div>
-      </div>
+        <div class="card-body" id="body_model_info_card">
+          <!-- Description content -->
+          <div id="description_content">
+            <p><?php echo $artefact_data['artefactDescription']; ?></p>
+            <a href="<?php echo $artefact_data['url']; ?>" class="btn btn-info" target='_blank'>More Info</a>
+          </div>
 
-      <!-- Media Gallery -->
-      <div class="card text-left">
-        <div class="card-header gallery-header">Media Gallery</div>
-        <div class="card-body">
-          <h4 class="card-title">Images</h4>
-          <p class="card-text">Here, you can select between the X3D model, descriptive video, and a collection of images of the space shuttle.
-
-            <div class="gallery" id="gallery1"></div>
+          <!-- Media Gallery content -->
+          <div id="gallery_content" style="display:none">
+            <?php for ($i = 0; $i < count($artefact_data['galleryImagePaths']); $i++){ ?>
+              <img src="<?php echo $artefact_data['galleryImagePaths'][$i] ?>" style="width:100px; height:100px;"/>
+            <?php } ?>
           </div>
         </div>
-
       </div>
+
     </div>
+  </div>
 
 </div>
 

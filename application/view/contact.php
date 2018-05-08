@@ -5,7 +5,7 @@
 
   <!-- Home Content -->
   <div class="main_contents">
-    <div class="card">
+    <div class="card text-center">
       <h5 class="card-header">Contact</h5>
 
       <div class="card-body">

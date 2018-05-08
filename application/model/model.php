@@ -141,6 +141,10 @@ class Model {
 			print new Exception($e->getMessage());
 		}
 
+    // Get the paths for the images in this artefact's gallery.
+    $image_paths = $this->getGalleryImagePathsForResourceName($artefact_data['resourceName']);
+    $artefact_data['galleryImagePaths'] = $image_paths;
+
 		// Send the response (JSON encoded) back to the controller.
 		return $artefact_data;
   }
@@ -199,8 +203,33 @@ class Model {
 			print new Exception($e->getMessage());
 		}
 
-		// Send the response (JSON encoded) back to the controller.
+		// Send the response back to the controller.
 		return $artefacts;
+  }
+
+  public function getGalleryImagePathsForResourceName($resource_name) {
+    $directory = './assets/images/gallery_images/' . $resource_name;
+    $allowed_extensions = array('png', 'jpg');
+    $dir_handle = opendir($directory);
+
+    $filepaths = null;
+
+    $i = 0;
+
+    while ($file = readdir($dir_handle)) {
+        if (substr($file, 0, 1) != '.') {
+            $file_components = explode('.', $file);
+            $extension = strtolower(array_pop($file_components));
+            if (in_array($extension, $allowed_extensions)) {
+              $filepaths[$i] = $directory.'/'.$file;
+            }
+            $i++;
+        }
+
+    }
+
+    closedir($dir_handle);
+    return $filepaths;
   }
 
 }

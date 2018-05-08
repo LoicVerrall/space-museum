@@ -294,7 +294,17 @@ hr {
     border: 0px solid rgba(0,0,0,.125);
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: rgb(210, 210, 220);
+    background-color: rgb(205, 205, 205);
+}
+
+/* Active tab in model information card */
+.card .nav-item .active {
+    background-color: rgb(205, 205, 205);
+    border-bottom: 0px;71	160	181
+}
+
+.card .nav-item a {
+    color: rgb(71,	160,	191);
 }
 
 .model3D  {

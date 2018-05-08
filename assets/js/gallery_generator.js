@@ -1,40 +1,39 @@
-function getXMLHttp() {
-    var xmlHttpReq;
+function getXMLHttpReq () {
+  let xmlHttpReq
 
+  try {
+    xmlHttpReq = new XMLHttpRequest()
+  } catch (e) {
     try {
-        xmlHttpReq = new XMLHttpRequest();
+      xmlHttpReq = new ActiveXObject("Msxml2.XMLHTTP")
     } catch (e) {
-        try {
-            xmlHttpReq = new ActiveXObject("Msxml2.XMLHTTP");
-        } catch (e) {
-            return false;
-        }
+      return false
     }
+  }
 
-    return xmlHttpReq;
+  return xmlHttpReq
 }
 
-var xmlHttpReq = getXMLHttp();
-var response;
+function generateGallery () {
+  const xmlHttpReq = getXMLHttpReq()
+  var send = 'index.php?page=gallery&resourceName=';
 
-var htmlCode = "";
+  xmlHttpReq.open('GET', send, true)
+  xmlHttpReq.send(null)
 
-$(document).ready(function() {
-    var send = "../hook.php";
-    xmlHttpReq.open("GET", send, true);
-    xmlHttpReq.send(null);
-    xmlHttpReq.onreadystatechange = function() {
-        if (xmlHttpReq.readyState == 4) {
-            response = xmlHttpReq.responseText.split("~");
-            for (var i = 0; i < response.length; i++) {
-                htmlCode += '<a href="./gallery/images/'+ response[i] +' ">';
-                htmlCode += '<img class="card-img-top img-thumbnail" src="' + response[i] + '" id="image_thumbnail"/>';
-                htmlCode += '</a>';
-            }
+  xmlHttpReq.onreadystatechange = function () {
+    if (xmlHttpReq.readyState === 4) {
+      const response = xmlHttpReq.responseText.split('~')
+      var htmlCode
+      for (var i = 0; i < response.length; i++) {
+        htmlCode += '<p>' + response[i] + '</p>'
+        // htmlCode += '<a href="./gallery/images/' + ' ">'
+        // htmlCode += '<img class="card-img-top img-thumbnail" src="' + response[i] + '" id="image_thumbnail"/>';
+        // htmlCode += '<p>IMAGE</p>'
+        // htmlCode += '</a>'
+      }
 
-            document.getElementById('gallery1').innerHTML = htmlCode;
-            document.getElementById('gallery1').innerHTML = htmlCode;
-            document.getElementById('gallery1').innerHTML = htmlCode;
-        }
+      document.getElementById('gallery_content').innerHTML = htmlCode
     }
-});
+  }
+}

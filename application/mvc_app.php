@@ -14,7 +14,6 @@
     $controller->render('home');
   } else {
     // Otherwise, a page was specified, so extract it.
-    $page = $_GET['page'];
-    $controller->render($page);
+    $controller->render($_GET['page']);
   }
 ?>
